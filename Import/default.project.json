@@ -1,0 +1,10 @@
+{
+    "name": "import",
+    "globIgnorePaths": ["**/*.spec.lua"],
+    "tree": {
+        "$path": "Import",
+        "Promise": {
+            "$path": "Packages/_Index/evaera_promise@4.0.0/promise/lib"
+        }
+    }
+}
