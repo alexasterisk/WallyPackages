@@ -1,0 +1,8 @@
+[package]
+name = "alexinite/maid"
+description = "[Ported from Quenty's NevermoreEngine to Wally] Easily cleanup event listeners and objects in Roblox"
+version = "2.3.1"
+license = "MIT"
+authors = ["Quenty", "Alexinite"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
