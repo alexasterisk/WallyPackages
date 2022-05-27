@@ -1,6 +1,6 @@
 {
     "name": "maid",
     "tree": {
-        "$path": "Maid.lua"
+        "$path": "init.lua"
     }
 }

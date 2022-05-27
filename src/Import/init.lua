@@ -35,14 +35,27 @@ local function _getNextLocation(path: string, inst: Instance)
     end)
 end
 
-local importer = {}
+--[=[
+    @class Import
+]=]
+local Import = {}
 
-function importer:__index(selfReference: Instance)
-    self._ref = selfReference
-    return self
+--[=[
+    Setting `__index` to `script` is important for when you need to use dot reference like `import "./promise"`.
+    @param selfReference Instance -- The Instance for your path reference
+    @return Import
+]=]
+function Import:__index(selfReference: Instance)
+    local mt = { _ref = selfReference }
+    return setmetatable(mt, Import)
 end
 
-function importer:__call(path: string)
+--[=[
+    This is the main import method. This allows you to import modules.
+    @param path string -- The directory-esque path to what you're importing.
+    @return Instance | table | any
+]=]
+function Import:__call(path: string)
     local function _checkIfselfReference()
         if not self._ref or typeof(self._ref) ~= "Instance" then
             error("[IMPORT] Cannot use dot reference as it was not defined when required\nTo fix this: use require(import) [script]\n> " .. path .. " <")
@@ -118,4 +131,4 @@ function importer:__call(path: string)
     end
 end
 
-return setmetatable({}, importer)
+return setmetatable({}, Import)

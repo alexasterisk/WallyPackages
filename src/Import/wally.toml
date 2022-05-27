@@ -2,10 +2,10 @@
 name = "alexinite/import"
 description = "An import module making requires more in-line with TypeScript (+ more)"
 version = "0.1.0"
-license = "MIT"
-authors = ["Alexinite"]
+
+
 registry = "https://github.com/UpliftGames/wally-index"
-exclude = ["wally.lock"]
+
 realm = "shared"
 
 [dependencies]

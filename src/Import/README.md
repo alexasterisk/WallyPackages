@@ -2,7 +2,7 @@
 
 ## Import
 
-
+[Documentation](https://alexinite.github.io/WallyPackages/import/)
 
 ## Installation
 
