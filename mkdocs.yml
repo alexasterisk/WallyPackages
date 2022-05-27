@@ -1,0 +1,31 @@
+site_name: Wally Packages
+site_url: https://example.com
+
+markdown_extensions:
+  - meta
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.highlight
+
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: cyan
+    scheme: slate
+  features:
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.tabs
+
+nav:
+  - Home: index.md
+  - Import:
+    - Introduction: import/index.md
+    - Installation: import/installation.md
+    - Usage: import/usage.md
