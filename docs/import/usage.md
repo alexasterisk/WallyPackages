@@ -7,6 +7,41 @@
 
 Referencing using `import` is in close parity with TypeScript's `import from` and formatted around Rojo's traditional workflow. It's also worth to note that the first letter of what you're requiring is interchangeable with uppercase and lowercase.
 
+-----
+
+### Wally Packages
+
+When Importing packages from Wally, you will need your Rojo workflow to look like the following:
+
+``` json title="default.project.json" linenums="1" hl_lines="7 8 9"
+{
+    "name": "project-name",
+    "tree": {
+        "$className": "DataModel",
+        "ReplicatedStorage": {
+            "$path": "src/shared",
+            "Packages": {
+                "$path": "Packages"
+            }
+        },
+        ...
+    }
+}
+```
+
+Then, after installing with `wally install`, you can require a Wally package like this:
+
+!!! example
+
+        ``` lua linenums="1" hl_lines="4"
+        local ReplicatedStorage = game:GetService("ReplicatedStorage")
+        local import = require(ReplicatedStorage.Packages.Import)
+
+        local Maid = import "@wally/maid"
+        ```
+
+-----
+
 ### ReplicatedStorage
 
 !!! example
@@ -156,7 +191,7 @@ Sometimes what you're searching for doesn't *need* to be a script. Like the foll
         ``` json title="shared/part.model.json"
         {
             "ClassName": "Part",
-            "Children:" [{
+            "Children": [{
                 "Name": "Head",
                 "ClassName": "Part"
             }],
