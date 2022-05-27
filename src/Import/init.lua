@@ -1,7 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
 local RunService = game:GetService("RunService")
-local Promise = require(script.Promise)
+local Promise = require(script.Parent.Promise)
 
 local WallyImports = ReplicatedStorage:FindFirstChild("Packages")
 
