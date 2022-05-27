@@ -1,11 +1,11 @@
 [package]
 name = "alexinite/import"
 description = "An import module making requires more in-line with TypeScript (+ more)"
-version = "0.1.0"
-
-
+version = "0.1.1"
+authors = ["Alexinite"]
+license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
-
+exclude = ["Packages", "README.md", "wally.lock", "default.project.json"]
 realm = "shared"
 
 [dependencies]
