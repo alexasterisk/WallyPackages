@@ -338,6 +338,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#wally-packages" class="md-nav__link">
+    Wally Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#replicatedstorage" class="md-nav__link">
     ReplicatedStorage
   </a>
@@ -434,6 +441,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#wally-packages" class="md-nav__link">
+    Wally Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#replicatedstorage" class="md-nav__link">
     ReplicatedStorage
   </a>
@@ -501,6 +515,48 @@
 </div>
 <h2 id="reference-points">Reference Points</h2>
 <p>Referencing using <code>import</code> is in close parity with TypeScript's <code>import from</code> and formatted around Rojo's traditional workflow. It's also worth to note that the first letter of what you're requiring is interchangeable with uppercase and lowercase.</p>
+<hr />
+<h3 id="wally-packages">Wally Packages</h3>
+<p>When Importing packages from Wally, you will need your Rojo workflow to look like the following:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">default.project.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;project-name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tree&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;$className&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DataModel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ReplicatedStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/shared&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Packages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">}</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Then, after installing with <code>wally install</code>, you can require a Wally package like this:</p>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
+
+<span class="hll"><span class="kd">local</span> <span class="n">Maid</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/maid&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+</p>
+</div>
+<hr />
 <h3 id="replicatedstorage">ReplicatedStorage</h3>
 <div class="admonition example">
 <p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
