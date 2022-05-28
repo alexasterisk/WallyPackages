@@ -22,7 +22,7 @@ SomeRandomPackage = "notAlex/notImport@1.0.0"
 Import = "alexinite/import@0.1.2"
 ```
 
-``` json title="default.project.json" linenums="1" hl_lines="7 8 9"
+``` json title="default.project.json" linenums="1" hl_lines="7 8 9 10 11 12 16 17 18"
 {
     "name": "project-name",
     "tree": {
@@ -31,8 +31,18 @@ Import = "alexinite/import@0.1.2"
             "$path": "src/shared",
             "Packages": {
                 "$path": "Packages"
+            },
+            "DevPackages": {
+                "$path": "DevPackages"
+            }
+        },
+        "ServerScriptService": {
+            "$path": "src/server",
+            "Packages": {
+                "$path": "ServerPackages"
             }
         }
+        ...
     }
 }
 ```

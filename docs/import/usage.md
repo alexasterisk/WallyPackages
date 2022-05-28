@@ -13,7 +13,7 @@ Referencing using `import` is in close parity with TypeScript's `import from` an
 
 When Importing packages from Wally, you will need your Rojo workflow to look like the following:
 
-``` json title="default.project.json" linenums="1" hl_lines="7 8 9"
+``` json title="default.project.json" linenums="1" hl_lines="7 8 9 10 11 12 16 17 18"
 {
     "name": "project-name",
     "tree": {
@@ -22,8 +22,17 @@ When Importing packages from Wally, you will need your Rojo workflow to look lik
             "$path": "src/shared",
             "Packages": {
                 "$path": "Packages"
+            },
+            "DevPackages": {
+                "$path": "DevPackages"
             }
         },
+        "ServerScriptService": {
+            "$path": "src/server",
+            "Packages": {
+                "$path": "ServerPackages"
+            }
+        }
         ...
     }
 }
@@ -33,11 +42,19 @@ Then, after installing with `wally install`, you can require a Wally package lik
 
 !!! example
 
-        ``` lua linenums="1" hl_lines="4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
+        ``` lua linenums="1"
+        local import = require(game.ReplicatedStorage.Packages.Import)
 
         local Maid = import "@wally/maid"
+        ```
+
+!!! tip
+
+        If you're importing a dev-package or server-package, it can be done like this:
+
+        ``` lua
+        local devPackage = import "@wally-dev/someDevPackage"
+        local serverPackage = import "@wally-server/someServerPackage"
         ```
 
 -----
@@ -46,10 +63,7 @@ Then, after installing with `wally install`, you can require a Wally package lik
 
 !!! example
 
-        ``` lua linenums="1" hl_lines="4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
-
+        ``` lua
         local SomeClass = import "shared/classModule"
         ```
 
@@ -59,10 +73,7 @@ Then, after installing with `wally install`, you can require a Wally package lik
 
 !!! example
 
-        ``` lua title="*.client.lua" linenums="1" hl_lines="4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
-
+        ``` lua title="*.client.lua"
         local SomeClass = import "client/classModule"
         ```
 
@@ -75,10 +86,7 @@ Then, after installing with `wally install`, you can require a Wally package lik
 
 !!! example
 
-        ``` lua title="*.server.lua" linenums="1" hl_lines="4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
-
+        ``` lua title="*.server.lua"
         local SomeClass = import "server/classModule"
         ```
 
@@ -93,22 +101,15 @@ One thing to tackle with this project was allowing TypeScript's `./` and `../` t
 
 !!! example
 
-        ``` lua linenums="1" hl_lines="2 4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import) [script]
+        ``` lua linenums="1"
+        local import = require(game.ReplicatedStorage.Packages.Import) [script]
 
         local SomeSubclass = import "./subclass"
-        ```
-
-        ``` lua linenums="1" hl_lines="2 4"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import) [script]
-
         local ClassInSameDir = import "../otherClass"
         ```
 
-!!! warning "Don't forget to set `[script]`"
-        Forgetting `[script]` when requiring `import` in times where a dot reference is used will result in an error.
+!!! warning "Don't forget to set [script]"
+        Forgetting `[script]` when requiring import in times where a dot reference is used will result in an error.
 
 -----
 
@@ -128,10 +129,7 @@ Whenever you require a Module you lose the ability to access the ModuleScript as
 
         === "Import"
 
-            ``` lua linenums="1" hl_lines="6"
-            local ReplicatedStorage = game:GetService("ReplicatedStorage")
-            local import = require(ReplicatedStorage.Packages.Import)
-
+            ``` lua
             local multiply = import "shared/multiply" -- first letter can be lowercase for consistency
             print(multiply(5 * 3)) -- prints 15
             print(multiply:GetFullName()) -- "game.ReplicatedStorage.Multipy"
@@ -139,9 +137,7 @@ Whenever you require a Module you lose the ability to access the ModuleScript as
 
         === "Require"
 
-            ``` lua linenums="1"
-            local ReplicatedStorage = game:GetService("ReplicatedStorage")
-
+            ``` lua
             local multiplyInstance = ReplicatedStorage.Mulitply
             local multiply = require(multiplyInstance)
             print(multiply(5 * 3)) -- prints 15
@@ -169,10 +165,7 @@ This is also similar for tables/metatables *kind of*.
         return class
         ```
 
-        ``` lua linenums="1" hl_lines="8"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
-
+        ``` lua
         local RandomClass = import "shared/randomClass"
         local randomClass = RandomClass.new(5)
 
@@ -201,10 +194,7 @@ Sometimes what you're searching for doesn't *need* to be a script. Like the foll
         }
         ```
 
-        ``` lua linenums="1" hl_lines="5"
-        local ReplicatedStorage = game:GetService("ReplicatedStorage")
-        local import = require(ReplicatedStorage.Packages.Import)
-
+        ``` lua
         local part = import "shared/part"
         print(part.Head:GetFullName()) -- "game.ReplicatedStorage.part.Head"
         ```
