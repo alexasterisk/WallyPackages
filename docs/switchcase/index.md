@@ -30,7 +30,7 @@ New to Wally? [Read more about it](https://wally.run/).
 
 Requiring SwitchCase will depend on your Rojo project format, I will assume you have Wally Packages going into ReplicatedStorage/Packages for usage examples.
 
-``` json title="default.project.json"
+``` json title="default.project.json" hl_lines="7 8 9"
 {
     "name": "project-name",
     "tree": {
@@ -52,16 +52,16 @@ Requiring SwitchCase will depend on your Rojo project format, I will assume you 
 
 First, requiring it depends on your Rojo project format, I will assume you have Wally Packages go into ReplicatedStorage/Packages.
 
-``` lua linenums="1" hl_lines="2"
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local switch, case, default = require(ReplicatedStorage.Packages.SwitchCase)()
+``` lua
+local switch, case, default =
+    require(game.ReplicatedStorage.Packages.SwitchCase)()
 ```
 
 !!! tip
         If you're using [my Import Package](../import/), you can import it like this:
 
-        ``` lua linenums="1"
-        local import = require(ReplicatedStorage.Packages.Import)
+        ``` lua
+        local import = require(game.ReplicatedStorage.Packages.Import)
         local switch, case, default = import "@wally/switchCase" ()
         ```
 
