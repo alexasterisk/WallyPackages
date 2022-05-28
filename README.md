@@ -1,3 +1,3 @@
 # Wally Packages
 
-## [Documentation](https://alexinite.github.io/wallypackages/)
+## [Documentation](https://alexinite.github.io/WallyPackages/)
