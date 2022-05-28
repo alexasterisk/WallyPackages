@@ -26,7 +26,7 @@ Easily cleanup event listeners and objects in Roblox
 
 ```toml
 [dependencies]
-Maid = "alexinite/maid@2.3.0"
+Maid = "alexinite/maid@2.3.2"
 ```
 
 ## Features
