@@ -1,0 +1,7 @@
+{
+    "name": "switchCase",
+    "globIgnorePaths": ["**/*.spec.lua"],
+    "tree": {
+        "$path": "init.lua"
+    }
+}
