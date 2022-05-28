@@ -19,7 +19,7 @@ realm = "shared"
 
 [dependencies]
 SomeRandomPackage = "notAlex/notImport@1.0.0"
-Import = "alexinite/import@0.1.1"
+Import = "alexinite/import@0.1.2"
 ```
 
 ``` json title="default.project.json" linenums="1" hl_lines="7 8 9"
