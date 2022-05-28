@@ -1,7 +1,6 @@
 {
     "name": "switchCase",
-    "globIgnorePaths": ["**/*.spec.lua"],
     "tree": {
-        "$path": "init.lua"
+        "$path": "lib.lua"
     }
 }

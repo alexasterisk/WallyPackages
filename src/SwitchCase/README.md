@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-SwitchCase = "alexinite/switch-case@0.1.0"
+SwitchCase = "alexinite/switch-case@0.1.2"
 ```

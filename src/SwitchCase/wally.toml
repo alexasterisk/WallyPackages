@@ -1,9 +1,9 @@
 [package]
 name = "alexinite/switch-case"
 description = "A Switch/Case module making If statements more in-line with JavaScript"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Alexinite"]
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
-exclude = ["README.md", "default.project.json"]
+exclude = ["README.md"]
 realm = "shared"
