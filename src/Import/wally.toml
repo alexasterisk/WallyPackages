@@ -1,12 +1,9 @@
 [package]
 name = "alexinite/import"
 description = "An import module making requires more in-line with TypeScript (+ more)"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Alexinite"]
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
-exclude = ["Packages", "README.md", "wally.lock", "default.project.json"]
+exclude = ["README.md", "wally.lock"]
 realm = "shared"
-
-[dependencies]
-Promise = "evaera/promise@4.0.0"
