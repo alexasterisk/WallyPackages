@@ -557,7 +557,16 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;project-name&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;tree&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="nt">&quot;$className&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DataModel&quot;</span><span class="p">,</span><span class="w"></span>
@@ -565,8 +574,17 @@
 <span class="w">            </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/shared&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="hll"><span class="w">            </span><span class="nt">&quot;Packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 </span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Packages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">},</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="nt">&quot;DevPackages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DevPackages&quot;</span><span class="w"></span>
 </span><span class="hll"><span class="w">            </span><span class="p">}</span><span class="w"></span>
 </span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ServerScriptService&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/server&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ServerPackages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">}</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="err">...</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -575,38 +593,31 @@
 <div class="admonition example">
 <p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
 
-<span class="hll"><span class="kd">local</span> <span class="n">Maid</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/maid&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<span class="kd">local</span> <span class="n">Maid</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/maid&quot;</span>
+</code></pre></div></td></tr></table></div>
+</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>If you're importing a dev-package or server-package, it can be done like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">devPackage</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally-dev/someDevPackage&quot;</span>
+<span class="kd">local</span> <span class="n">serverPackage</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally-server/someServerPackage&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <hr />
 <h3 id="replicatedstorage">ReplicatedStorage</h3>
 <div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="hll"><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/classModule&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<p class="admonition-title">Example<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/classModule&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <hr />
 <h3 id="starterplayerscripts">StarterPlayerScripts</h3>
 <div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">*.client.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="hll"><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;client/classModule&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<p class="admonition-title">Example<div class="highlight"><span class="filename">*.client.lua</span><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;client/classModule&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <div class="admonition warning">
@@ -616,14 +627,8 @@
 <hr />
 <h3 id="serverscriptservice">ServerScriptService</h3>
 <div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">*.server.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="hll"><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;server/classModule&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<p class="admonition-title">Example<div class="highlight"><span class="filename">*.server.lua</span><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;server/classModule&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <div class="admonition warning">
@@ -637,23 +642,15 @@
 <p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="hll"><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">[</span><span class="n">script</span><span class="p">]</span>
-</span>
-<span class="hll"><span class="kd">local</span> <span class="n">SomeSubclass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;./subclass&quot;</span>
-</span></code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="hll"><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">[</span><span class="n">script</span><span class="p">]</span>
-</span>
-<span class="hll"><span class="kd">local</span> <span class="n">ClassInSameDir</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;../otherClass&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">[</span><span class="n">script</span><span class="p">]</span>
+
+<span class="kd">local</span> <span class="n">SomeSubclass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;./subclass&quot;</span>
+<span class="kd">local</span> <span class="n">ClassInSameDir</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;../otherClass&quot;</span>
+</code></pre></div></td></tr></table></div>
 </p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Don't forget to set <code>[script]</code><p>Forgetting <code>[script]</code> when requiring <code>import</code> in times where a dot reference is used will result in an error.</p>
+<p class="admonition-title">Don't forget to set [script]<p>Forgetting <code>[script]</code> when requiring import in times where a dot reference is used will result in an error.</p>
 </p>
 </div>
 <hr />
@@ -670,32 +667,17 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Import</label><label for="__tabbed_1_2">Require</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">multiply</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/multiply&quot;</span> <span class="c1">-- first letter can be lowercase for consistency</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">multiply</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/multiply&quot;</span> <span class="c1">-- first letter can be lowercase for consistency</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.Multipy&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.Multipy&quot;</span>
+</code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">multiplyInstance</span> <span class="o">=</span> <span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Mulitply</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">multiplyInstance</span> <span class="o">=</span> <span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Mulitply</span>
 <span class="kd">local</span> <span class="n">multiply</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">multiplyInstance</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">multiplyInstance</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.Multiply&quot;</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 </div>
 </div>
 </div>
@@ -731,22 +713,12 @@
 
 <span class="kr">return</span> <span class="n">class</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">RandomClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/randomClass&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">RandomClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/randomClass&quot;</span>
 <span class="kd">local</span> <span class="n">randomClass</span> <span class="o">=</span> <span class="n">RandomClass</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">randomClass</span><span class="p">:</span><span class="n">multiplyBy</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">randomClass</span><span class="p">.</span><span class="n">importBackRef</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.RandomClass&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<span class="nb">print</span><span class="p">(</span><span class="n">randomClass</span><span class="p">.</span><span class="n">importBackRef</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.RandomClass&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <hr />
@@ -764,16 +736,9 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">ReplicatedStorage</span> <span class="o">=</span> <span class="n">game</span><span class="p">:</span><span class="n">GetService</span><span class="p">(</span><span class="s2">&quot;ReplicatedStorage&quot;</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">part</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/part&quot;</span>
-<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">part</span><span class="p">.</span><span class="n">Head</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.part.Head&quot;</span>
-</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">part</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/part&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">part</span><span class="p">.</span><span class="n">Head</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.part.Head&quot;</span>
+</code></pre></div>
 </p>
 </div>
 <div class="admonition danger">
