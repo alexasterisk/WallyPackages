@@ -22,7 +22,11 @@ realm = "shared"
 SwitchCase = "alexinite/switch-case@0.1.0"
 ```
 
-Once you have this in your `wally.toml`, run `wally install`. New to Wally? [Read more about it](https://wally.run/).
+``` ps1
+wally install
+```
+
+New to Wally? [Read more about it](https://wally.run/).
 
 Requiring SwitchCase will depend on your Rojo project format, I will assume you have Wally Packages going into ReplicatedStorage/Packages for usage examples.
 
