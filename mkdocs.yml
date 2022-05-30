@@ -30,3 +30,6 @@ nav:
     - Installation: import/installation.md
     - Usage: import/usage.md
   - SwitchCase: switchcase/index.md
+  - LuaClass:
+    - Introduction: luaclass/index.md
+    - Usage: luaclass/usage.md
