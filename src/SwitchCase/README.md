@@ -2,7 +2,7 @@
 
 ## SwitchCase
 
-[Documentation](https://alexinite.github.io/WallyPackages/switchcase/)
+[Documentation](https://alexinite.github.io/WallyPackages/switch-case/)
 
 ## Installation
 
