@@ -29,7 +29,7 @@ return function(publishToGlobalIndex: boolean?)
         for key, value in pairs(final) do
             if key == "constructor" then
                 continue
-            elseif string.match(key, "^____Metamethod$") then
+            elseif string.match(key, "^____Metamethod%$") then
                 mt["__" .. string.split(key, "$")[2]] = value
             elseif type(value) == "function" then
                 this[key] = bindSelf(this, value)
