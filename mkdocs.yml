@@ -29,7 +29,10 @@ nav:
     - Introduction: import/index.md
     - Installation: import/installation.md
     - Usage: import/usage.md
-  - SwitchCase: switchcase/index.md
-  - LuaClass:
-    - Introduction: luaclass/index.md
-    - Usage: luaclass/usage.md
+  - Switch/Case: switch-case/index.md
+  - Classes:
+    - Introduction: classes/index.md
+    - Usage: classes/usage.md
+  - Arrays:
+    - Introduction: arrays/index.md
+    - Usage: arrays/usage.md
