@@ -6,6 +6,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://example.com/arrays/</loc>
+         <lastmod>2022-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/arrays/usage/</loc>
+         <lastmod>2022-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/classes/</loc>
+         <lastmod>2022-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://example.com/classes/usage/</loc>
+         <lastmod>2022-05-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://example.com/import/</loc>
          <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
@@ -21,17 +41,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/luaclass/</loc>
-         <lastmod>2022-05-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/luaclass/usage/</loc>
-         <lastmod>2022-05-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/switchcase/</loc>
+         <loc>https://example.com/switch-case/</loc>
          <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>

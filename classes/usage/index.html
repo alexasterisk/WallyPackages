@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/luaclass/usage/">
+        <link rel="canonical" href="https://example.com/classes/usage/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
@@ -189,8 +189,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../switchcase/" class="md-tabs__link">
-      SwitchCase
+    <a href="../../switch-case/" class="md-tabs__link">
+      Switch/Case
     </a>
   </li>
 
@@ -207,7 +207,23 @@
   
     <li class="md-tabs__item">
       <a href="../" class="md-tabs__link md-tabs__link--active">
-        LuaClass
+        Classes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../arrays/" class="md-tabs__link">
+        Arrays
       </a>
     </li>
   
@@ -344,8 +360,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../switchcase/" class="md-nav__link">
-        SwitchCase
+      <a href="../../switch-case/" class="md-nav__link">
+        Switch/Case
       </a>
     </li>
   
@@ -370,14 +386,14 @@
       
       
         <label class="md-nav__link" for="__nav_4">
-          LuaClass
+          Classes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="LuaClass" data-md-level="1">
+      <nav class="md-nav" aria-label="Classes" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          LuaClass
+          Classes
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -490,6 +506,68 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Arrays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Arrays" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Arrays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -572,7 +650,7 @@
 
 
 <h1 id="usage">Usage</h1>
-<p>Firstly, you will need to require the Classes Package. By the way, I might be taking snippets directly from the JavaScript classes reference from Mozilla. dwi</p>
+<p>Firstly, you will need to require the LuaClass Package. By the way, I might be taking snippets directly from the JavaScript classes reference from Mozilla. dwi</p>
 <div class="admonition warning">
 <p class="admonition-title">About class extending<p>If you're afraid that class extending isn't a thing here, it is: I just wont talk about it right away. Use the menu on the right to skip down to it if you'd like to!</p>
 </p>
@@ -636,7 +714,7 @@
 <span class="kd">local</span> <span class="n">rectangle</span> <span class="o">=</span> <span class="n">new</span> <span class="s2">&quot;Rectangle&quot;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">rectangle</span><span class="p">.</span><span class="n">generate</span><span class="p">().</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;a cool part&quot;</span>
 </code></pre></div>
-<p>Just like that now you're a professional at Classes! (just don't think about touching Java, don't do that to yourself.)</p>
+<p>Just like that now you're a professional at using classes! (just don't think about touching Java, don't do that to yourself.)</p>
 <hr />
 <h2 id="subclasses-with-extends">Subclasses with <code>extends</code></h2>
 <p>You can also create children of another class, aka. forcing it into another class.</p>
@@ -705,7 +783,7 @@
 <h2 id="global-index">Global Index</h2>
 <p>A special feature that was added to this is a global index. This is mainly here because so you don't have to constantly import a class from a different module all of the time. Do note this is bad practice for idiomacy.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning<p>Classes will only be pushed to the global index if you require LuaClasses like this:</p>
+<p class="admonition-title">Warning<p>Classes will only be pushed to the global index if you require LuaClass like this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">new</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="n">extends</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">LuaClass</span><span class="p">)(</span><span class="kc">true</span><span class="p">)</span>
 </code></pre></div>
 <p>Or, if use my import module:</p>
@@ -800,6 +878,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../../arrays/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Introduction
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
