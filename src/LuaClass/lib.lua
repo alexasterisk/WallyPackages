@@ -16,6 +16,12 @@ end
 -- allows classes to be immediately be used anywhere
 local globalIndex: {[string]: Class} = {}
 
+-- auto import my classes if they can be detected (future refactor)
+local LuaArray = game.ReplicatedStorage.Packages:FindFirstChild("LuaArray")
+if LuaArray then
+    globalIndex["Array"] = require(LuaArray)
+end
+
 return function(publishToGlobalIndex: boolean?)
     local index: {[string]: Class} = {}
 
