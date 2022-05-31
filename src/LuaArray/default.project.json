@@ -1,0 +1,6 @@
+{
+    "name": "luaArray",
+    "tree": {
+        "$path": "lib.lua"
+    }
+}
