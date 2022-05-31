@@ -19,7 +19,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Classes = "alexinite/lua-class@0.1.1"
+LuaClass = "alexinite/lua-class@0.1.2"
 ```
 
 After doing this (and learning Rojo + Wally, it's worth it I promise!) run `wally install` on your command line while in your project's repository.

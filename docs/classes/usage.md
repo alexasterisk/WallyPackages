@@ -1,6 +1,6 @@
 # Usage
 
-Firstly, you will need to require the Classes Package. By the way, I might be taking snippets directly from the JavaScript classes reference from Mozilla. dwi
+Firstly, you will need to require the LuaClass Package. By the way, I might be taking snippets directly from the JavaScript classes reference from Mozilla. dwi
 
 !!! warning "About class extending"
         If you're afraid that class extending isn't a thing here, it is: I just wont talk about it right away. Use the menu on the right to skip down to it if you'd like to!
@@ -74,7 +74,7 @@ local rectangle = new "Rectangle" (3, 5)
 rectangle.generate().Name = "a cool part"
 ```
 
-Just like that now you're a professional at Classes! (just don't think about touching Java, don't do that to yourself.)
+Just like that now you're a professional at using classes! (just don't think about touching Java, don't do that to yourself.)
 
 -----
 
@@ -150,7 +150,7 @@ You can also create children of another class, aka. forcing it into another clas
 A special feature that was added to this is a global index. This is mainly here because so you don't have to constantly import a class from a different module all of the time. Do note this is bad practice for idiomacy.
 
 !!! warning
-        Classes will only be pushed to the global index if you require LuaClasses like this:
+        Classes will only be pushed to the global index if you require LuaClass like this:
 
         ``` lua
         local new, class, extends = require(game.ReplicatedStorage.Packages.LuaClass)(true)
