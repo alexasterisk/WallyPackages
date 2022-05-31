@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/import/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/import/installation/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/import/usage/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/luaclass/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/luaclass/usage/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/switchcase/</loc>
-         <lastmod>2022-05-30</lastmod>
+         <lastmod>2022-05-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
