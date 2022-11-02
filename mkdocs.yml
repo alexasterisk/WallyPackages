@@ -43,3 +43,5 @@ nav:
     - Introduction: playerResolvable/index.md
   - TableUtil:
     - Introduction: tableUtil/index.md
+  - LuaObjects:
+    - Introduction: objects/index.md
