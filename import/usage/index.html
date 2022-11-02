@@ -1,0 +1,1126 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alexasterisk.github.io/WallyPackages/import/usage/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>Usage - Wally Packages</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#usage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Wally Packages" class="md-header__button md-logo" aria-label="Wally Packages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wally Packages
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Usage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Import
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../switch-case/" class="md-tabs__link">
+      Switch/Case
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../classes/" class="md-tabs__link">
+        Classes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../arrays/" class="md-tabs__link">
+        Arrays
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../logger/" class="md-tabs__link">
+        Logger
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../playerResolvable/" class="md-tabs__link">
+        PlayerResolvable
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tableUtil/" class="md-tabs__link">
+        TableUtil
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../objects/" class="md-tabs__link">
+        LuaObjects
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wally Packages" class="md-nav__button md-logo" aria-label="Wally Packages" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Wally Packages
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Import
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Import" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Import
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Usage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Usage
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-points" class="md-nav__link">
+    Reference Points
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wally-packages" class="md-nav__link">
+    Wally Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicatedstorage" class="md-nav__link">
+    ReplicatedStorage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starterplayerscripts" class="md-nav__link">
+    StarterPlayerScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverscriptservice" class="md-nav__link">
+    ServerScriptService
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dot-references" class="md-nav__link">
+    Dot References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../switch-case/" class="md-nav__link">
+        Switch/Case
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Classes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Classes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Classes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../classes/usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Arrays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Arrays" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Arrays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logger" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Logger
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          PlayerResolvable
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PlayerResolvable" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          PlayerResolvable
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playerResolvable/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          TableUtil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TableUtil" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          TableUtil
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tableUtil/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          LuaObjects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LuaObjects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          LuaObjects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reference-points" class="md-nav__link">
+    Reference Points
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wally-packages" class="md-nav__link">
+    Wally Packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replicatedstorage" class="md-nav__link">
+    ReplicatedStorage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starterplayerscripts" class="md-nav__link">
+    StarterPlayerScripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serverscriptservice" class="md-nav__link">
+    ServerScriptService
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dot-references" class="md-nav__link">
+    Dot References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="usage">Usage</h1>
+<div class="admonition danger">
+<p class="admonition-title">Impractical</p>
+<p>This module was more as a concept and doesn't give ANY speed bonuses to using the default require(); however, I'd argue it still looks better. If you'd like to make this more efficient please <a href="https://github.com/alexinite/WallyPackages/fork">feel free to</a>.</p>
+</div>
+<h2 id="reference-points">Reference Points</h2>
+<p>Referencing using <code>import</code> is in close parity with TypeScript's <code>import from</code> and formatted around Rojo's traditional workflow. It's also worth to note that the first letter of what you're requiring is interchangeable with uppercase and lowercase.</p>
+<hr />
+<h3 id="wally-packages">Wally Packages</h3>
+<p>When Importing packages from Wally, you will need your Rojo workflow to look like the following:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">default.project.json</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;project-name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;tree&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;$className&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DataModel&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ReplicatedStorage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/shared&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Packages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">},</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="nt">&quot;DevPackages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DevPackages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">}</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;ServerScriptService&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/server&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">            </span><span class="nt">&quot;Packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+</span><span class="hll"><span class="w">                </span><span class="nt">&quot;$path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ServerPackages&quot;</span><span class="w"></span>
+</span><span class="hll"><span class="w">            </span><span class="p">}</span><span class="w"></span>
+</span><span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="err">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Then, after installing with <code>wally install</code>, you can require a Wally package like this:</p>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">Maid</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/maid&quot;</span>
+</code></pre></div></td></tr></table></div>
+</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip<p>If you're importing a dev-package or server-package, it can be done like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">devPackage</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally-dev/someDevPackage&quot;</span>
+<span class="kd">local</span> <span class="n">serverPackage</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally-server/someServerPackage&quot;</span>
+</code></pre></div>
+</p>
+</div>
+<hr />
+<h3 id="replicatedstorage">ReplicatedStorage</h3>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/classModule&quot;</span>
+</code></pre></div>
+</p>
+</div>
+<hr />
+<h3 id="starterplayerscripts">StarterPlayerScripts</h3>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><span class="filename">*.client.lua</span><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;client/classModule&quot;</span>
+</code></pre></div>
+</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Client-Only<p>Using <code>client/</code> can only be done in a client-sided context. Attempting to access it from a server-sided context will result in an error.</p>
+</p>
+</div>
+<hr />
+<h3 id="serverscriptservice">ServerScriptService</h3>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><span class="filename">*.server.lua</span><pre><span></span><code><span class="kd">local</span> <span class="n">SomeClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;server/classModule&quot;</span>
+</code></pre></div>
+</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Server-Only<p>Using <code>server/</code> can only be done in a server-sided context. Attempting to access it from a client-sided context will result in an error.</p>
+</p>
+</div>
+<hr />
+<h2 id="dot-references">Dot References</h2>
+<p>One thing to tackle with this project was allowing TypeScript's <code>./</code> and <code>../</code> to be available from all contexts. Mostly for use with submodules.</p>
+<div class="admonition example">
+<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">(</span><span class="n">script</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">SomeSubclass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;./subclass&quot;</span>
+<span class="kd">local</span> <span class="n">ClassInSameDir</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;../otherClass&quot;</span>
+</code></pre></div></td></tr></table></div>
+</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Don't forget to run <code>(script)</code><p>Forgetting <code>(script)</code> when requiring import in times where a dot reference is used will result in an error.</p>
+</p>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Installation
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../switch-case/" class="md-footer__link md-footer__link--next" aria-label="Next: Switch/Case" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Switch/Case
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+    
+  </body>
+</html>
