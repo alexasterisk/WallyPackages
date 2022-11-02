@@ -2,19 +2,6 @@ local util = require(script.Parent.Parent.Parent.util)
 
 --- @class Set
 
---- @prop size number
---- @readonly
---- @within Set
---- Returns the number of values in the `Set` object.
-
---- @prop _table table<any, any>
---- @private
---- @within Set
-
---- @prop __type "Map"
---- @private
---- @within Set
-
 local Set = {
 
     --- Returns the number of values in the `Set` object.

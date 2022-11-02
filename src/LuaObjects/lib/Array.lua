@@ -2,25 +2,6 @@ local Map = require(script.Parent.Map)
 local util = require(script.Parent.Parent.Parent.util)
 
 --- @class Array
-
---- @prop length number
---- @readonly
---- @within Array
---- Reflects the number of elements in an array.
-
---- @prop _maxLength number
---- @private
---- @within Array
---- The maximum length of the array.
-
---- @prop _table table<number, any>
---- @private
---- @within Array
-
---- @prop __type "Array"
---- @private
---- @within Array
-
 local Array = {
 
     --- Reflects the number of elements in an array.
@@ -60,7 +41,7 @@ function Array.new(arg: (number | util.table | string)?)
 end
 
 --- Creates a new `Array` instance from an array-like object or iterable object.
---- @param arrayLike IterableObject -- An iterable or array-like object to convert to an array.
+--- @param arrayLike any -- An iterable or array-like object to convert to an array.
 --- @param mapFn? fun(element: any, index: any, thisArg: any) -- Map function to call on every element of the array.
 --- @param thisArg? any -- Value to use as `self` when executing `mapFn`.
 --- @return Array
@@ -77,7 +58,7 @@ function Array.isArray(value): boolean
 end
 
 --- Creates a new `Array` instance with a variable number of arguments, regardless of number or type of the arguments.
---- @param ... any -- Elements used to create the array.
+--- @vararg any -- Elements used to create the array.
 --- @return Array
 function Array.of(...)
     local array = Array.new()
@@ -189,7 +170,7 @@ function Array:pop(): any?
 end
 
 --- Appends new elements to the end of an array, and returns the new length of the array.
---- @param ... any -- New elements to add to the array.
+--- @vararg any -- New elements to add to the array.
 --- @return number
 function Array:push(...: any): number
     for _, v in {...} do
@@ -200,7 +181,7 @@ function Array:push(...: any): number
 end
 
 --- Returns a new array that is the calling array joined with other array(s) and/or value(s).
---- @param ... Array | any -- Arrays and/or values to concatenate into a new array.
+--- @vararg Array | any -- Arrays and/or values to concatenate into a new array.
 --- - If all `valueN` parameters are omitted, `concat` returns a "shallow copy" of the existing array on which it is called.
 --- @return Array
 function Array:concat(...)
@@ -302,7 +283,7 @@ end
 --- Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
 --- @param start number -- The one-based location in the array from which to start removing elements.
 --- @param deleteCount number -- The number of elements to remove.
---- @param ... any -- Elements to insert into the array in place of the deleted elements.
+--- @vararg any -- Elements to insert into the array in place of the deleted elements.
 --- @return Array
 function Array:splice(start: number, deleteCount: number, ...)
     local items = {...}
@@ -328,7 +309,7 @@ function Array:splice(start: number, deleteCount: number, ...)
 end
 
 -- Inserts new elements at the start of an array, and returns the new length of the array.
---- @param ... any -- Elements to inster at the start of the array.
+--- @vararg any -- Elements to inster at the start of the array.
 --- @return Array
 function Array:unshift(...)
     local args = {...}

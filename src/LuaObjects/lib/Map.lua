@@ -2,19 +2,6 @@ local util = require(script.Parent.Parent.Parent.util)
 
 --- @class Map
 
---- @prop size number
---- @readonly
---- @within Map
---- Returns the number of key/value pairs in the `Map` object.
-
---- @prop _table table<any, any>
---- @private
---- @within Map
-
---- @prop __type "Map"
---- @private
---- @within Map
-
 local Map = {
 
     --- Returns the number of key/value pairs in the `Map` object.
