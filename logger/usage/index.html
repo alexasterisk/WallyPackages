@@ -652,6 +652,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#printing-a-warning" class="md-nav__link">
+    Printing a warning
+  </a>
+  
+    <nav class="md-nav" aria-label="Printing a warning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loggerwarnstring" class="md-nav__link">
+    logger.warn(string, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggerwarnfstring-any" class="md-nav__link">
+    logger.warnf(string, any[], ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggerenvwarnfstring" class="md-nav__link">
+    logger.env.warnf(string, ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#throwing-an-error" class="md-nav__link">
     Throwing an error
   </a>
@@ -788,6 +822,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#printing-a-warning" class="md-nav__link">
+    Printing a warning
+  </a>
+  
+    <nav class="md-nav" aria-label="Printing a warning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loggerwarnstring" class="md-nav__link">
+    logger.warn(string, ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggerwarnfstring-any" class="md-nav__link">
+    logger.warnf(string, any[], ...)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loggerenvwarnfstring" class="md-nav__link">
+    logger.env.warnf(string, ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#throwing-an-error" class="md-nav__link">
     Throwing an error
   </a>
@@ -906,6 +974,31 @@
 
 <span class="kd">local</span> <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Workspace&quot;</span> <span class="c1">-- has to be NOT local</span>
 <span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Go to {location} please!&quot;</span><span class="p">)</span> <span class="c1">-- errors</span>
+</code></pre></div>
+<hr />
+<h2 id="printing-a-warning">Printing a warning</h2>
+<h3 id="loggerwarnstring"><code>logger.warn(string, ...)</code></h3>
+<p>This simply warns with a message, accepting varadic arguments to print as extra data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;This is a warning!&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;This is warning with extra data!&quot;</span><span class="p">,</span> <span class="s2">&quot;More!&quot;</span><span class="p">,</span> <span class="s2">&quot;So many warnings!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="loggerwarnfstring-any"><code>logger.warnf(string, any[], ...)</code></h3>
+<p>This warns a message but uses the built-in formatter. This will match Python formatting. Just like <code>logger.log</code> this will accept varadic arguments to print as extra data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="n">warnf</span><span class="p">(</span><span class="s2">&quot;Warning from {name}!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;Alex&quot;</span> <span class="p">})</span> <span class="c1">-- &quot;Warning from Alex!&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">warnf</span><span class="p">(</span><span class="s2">&quot;Warning from {name} and {me}!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;cause&quot;</span><span class="p">,</span> <span class="s2">&quot;Alex&quot;</span> <span class="p">},</span> <span class="s2">&quot;other data&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Warning from cause and Alex!&quot;, &quot;other data&quot;</span>
+</code></pre></div>
+<h3 id="loggerenvwarnfstring"><code>logger.env.warnf(string, ...)</code></h3>
+<div class="admonition warning">
+<p class="admonition-title">Luau Optimizations</p>
+<p>By using <code>logger.env.warnf(string, ...)</code> it <strong>will</strong> use <code>getfenv()</code> which currently breaks Luau optimizations!</p>
+</div>
+<p>To make logger almost identical to Python, this will use <code>getfenv()</code> to find the <strong>non-local</strong> variable you referenced. This also accepts varadic arguments like every other <em>warn</em> method.</p>
+<div class="highlight"><pre><span></span><code><span class="n">reason</span> <span class="o">=</span> <span class="s2">&quot;it broke&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">warnf</span><span class="p">(</span><span class="s2">&quot;Warning! {reason}!&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Warning! it broke!&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">warnf</span><span class="p">(</span><span class="s2">&quot;Warning! {reason}!&quot;</span><span class="p">,</span> <span class="s2">&quot;other data&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Warning! it broke!&quot; &quot;other data&quot;</span>
+
+<span class="kd">local</span> <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Workspace&quot;</span> <span class="c1">-- has to be NOT local</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">warnf</span><span class="p">(</span><span class="s2">&quot;It was caused in {location}!&quot;</span><span class="p">)</span> <span class="c1">-- errors</span>
 </code></pre></div>
 <hr />
 <h2 id="throwing-an-error">Throwing an error</h2>
