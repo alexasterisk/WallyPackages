@@ -45,3 +45,5 @@ nav:
     - Introduction: tableUtil/index.md
   - LuaObjects:
     - Introduction: objects/index.md
+  - Tween:
+    - Introduction: tween/index.md
