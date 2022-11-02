@@ -1,0 +1,9 @@
+[package]
+name = "alexinite/logger"
+description = "Python-like string formatting and varadic arguments for errors."
+version = "0.1.0"
+authors = ["alexasterisk"]
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+exclude = ["README.md", "wally.lock"]
+realm = "shared"

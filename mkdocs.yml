@@ -1,5 +1,5 @@
 site_name: Wally Packages
-site_url: https://example.com
+site_url: https://alexasterisk.github.io/WallyPackages/
 
 markdown_extensions:
   - meta
@@ -36,3 +36,6 @@ nav:
   - Arrays:
     - Introduction: arrays/index.md
     - Usage: arrays/usage.md
+  - Logger:
+    - Introduction: logger/index.md
+    - Usage: logger/usage.md

@@ -11,3 +11,5 @@
 * [==v0.1.0== lua-array](arrays/)
 
 * [==v2.3.2== quenty/maid](https://quenty.github.io/NevermoreEngine/api/maid)
+
+* [==v.0.1.0== logger](logger/)
