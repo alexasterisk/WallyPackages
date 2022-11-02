@@ -47,7 +47,15 @@ return function (name: string)
 		--- - All varargs will be treated as extra data to print
 		log = function(msg: string, ...)
 			print(name .. msg, ...)
-		end
+		end,
+
+        --- Sends a warning
+        --- @param msg string -- The message to be used as a warning
+        --- @vararg any
+        --- - All varargs will be treated as extra data to print
+        warn = function(msg: string, ...)
+            warn(name .. msg, ...)
+        end
 	}
 
 	--- Formats a string python-like and then prints it
@@ -58,6 +66,16 @@ return function (name: string)
 	function logger.logf(msg: string, t: {string}, ...)
 		msg = logger.format(msg, t)
 		logger.log(msg, ...)
+	end
+
+    --- Formats a string python-like and then sends it as a warning
+	--- @param msg string -- The message to be warned, params using `{param}`
+	--- @param t table<number, string> -- The variables to be used in formatting
+	--- @vararg any
+	--- - All varargs will be treated as extra data to print
+	function logger.warnf(msg: string, t: {string}, ...)
+		msg = logger.format(msg, t)
+		logger.warn(msg, ...)
 	end
 
 	--- Formats a string python-like and then throws it as an error
@@ -80,6 +98,16 @@ return function (name: string)
 		logf = function(msg: string, ...)
 			msg = logger.format(msg, true, 1)
 			logger.log(msg, ...)
+		end,
+
+        --- Formats a string python-like and then sends it as a warning
+		--- @param msg string -- The message to be warned, params using `{param}`
+		--- @vararg any
+		--- - All varargs will be treated as extra data to print
+		--- - All params will be imported directly from the calling script using `getfenv()`. Do note this breaks Luau optimizations!
+		warnf = function(msg: string, ...)
+			msg = logger.format(msg, true, 1)
+			logger.warn(msg, ...)
 		end,
 
 		--- Formats a string python-like and then throws it as an error

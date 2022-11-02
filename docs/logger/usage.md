@@ -100,6 +100,44 @@ logger.env.logf("Go to {location} please!") -- errors
 
 -----
 
+## Printing a warning
+
+### `logger.warn(string, ...)`
+
+This simply warns with a message, accepting varadic arguments to print as extra data.
+
+``` lua
+logger.warn("This is a warning!")
+logger.warn("This is warning with extra data!", "More!", "So many warnings!")
+```
+
+### `logger.warnf(string, any[], ...)`
+
+This warns a message but uses the built-in formatter. This will match Python formatting. Just like `logger.log` this will accept varadic arguments to print as extra data.
+
+``` lua
+logger.warnf("Warning from {name}!", { "Alex" }) -- "Warning from Alex!"
+logger.warnf("Warning from {name} and {me}!", { "cause", "Alex" }, "other data") -- "Warning from cause and Alex!", "other data"
+```
+
+### `logger.env.warnf(string, ...)`
+
+!!! warning "Luau Optimizations"
+    By using `logger.env.warnf(string, ...)` it **will** use `getfenv()` which currently breaks Luau optimizations!
+
+To make logger almost identical to Python, this will use `getfenv()` to find the **non-local** variable you referenced. This also accepts varadic arguments like every other *warn* method.
+
+``` lua
+reason = "it broke"
+logger.env.warnf("Warning! {reason}!") -- "Warning! it broke!"
+logger.env.warnf("Warning! {reason}!", "other data") -- "Warning! it broke!" "other data"
+
+local location = "Workspace" -- has to be NOT local
+logger.env.warnf("It was caused in {location}!") -- errors
+```
+
+-----
+
 ## Throwing an error
 
 ### `logger.err(string, number|any, ...)`
