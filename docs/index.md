@@ -19,7 +19,13 @@
 -----
 
 ## Hosted Packages
-### [==`v2.3.2`== quenty/maid](https://quenty.github.io/NevermoreEngine/api/maid)
+### [==`v2.3.2`== alexinite/maid](https://quenty.github.io/NevermoreEngine/api/maid)
+This project belongs to [Quenty](https://github.com/quenty/).
+
+### [==`v0.2.0-bleeding`== alexinite/fusion](https://elttob.uk/Fusion/)
+A version of Fusion which is always up-to-date with the primary fork. This is bleeding-edge.<br>
+If you're looking for the beta version, [ruizukun-dev](https://github.com/ruizukun-dev/) hosts that `ruizukun-dev/fusion@1.0.0`.<br>
+This project belongs to [Elttob](https://github.com/Elttob).
 
 -----
 
