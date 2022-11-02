@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/arrays/usage/">
+        <link rel="canonical" href="https://example.com/logger/usage/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
@@ -214,15 +214,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../arrays/" class="md-tabs__link">
         Arrays
       </a>
     </li>
@@ -232,13 +230,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../logger/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Logger
       </a>
     </li>
@@ -451,14 +451,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -472,6 +470,70 @@
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Arrays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrays/usage/" class="md-nav__link">
+        Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Logger
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logger" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Logger
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -529,37 +591,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#importing-luaarray" class="md-nav__link">
-    Importing LuaArray
+  <a href="#using-the-formatter" class="md-nav__link">
+    Using the formatter
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-the-array" class="md-nav__link">
-    Logging the Array
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one-indexed" class="md-nav__link">
-    One-indexed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing-properties" class="md-nav__link">
-    Missing Properties
-  </a>
-  
-    <nav class="md-nav" aria-label="Missing Properties">
+    <nav class="md-nav" aria-label="Using the formatter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arrayunscopables" class="md-nav__link">
-    Array[@@unscopables]
+  <a href="#loggerformatstring-anyboolean-number" class="md-nav__link">
+    logger.format(string, any[]|boolean, number?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-localized-variables" class="md-nav__link">
+    Non-Localized Variables
   </a>
   
 </li>
@@ -570,93 +618,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#missing-methods" class="md-nav__link">
-    Missing Methods
+  <a href="#printing-a-message" class="md-nav__link">
+    Printing a message
   </a>
   
-    <nav class="md-nav" aria-label="Missing Methods">
+    <nav class="md-nav" aria-label="Printing a message">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arrayiterator" class="md-nav__link">
-    Array[@@iterator]()
+  <a href="#loggerlogstring" class="md-nav__link">
+    logger.log(string, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-arrayspecies" class="md-nav__link">
-    get Array[@@species]
+  <a href="#loggerlogfstring-any" class="md-nav__link">
+    logger.logf(string, any[], ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrayentries" class="md-nav__link">
-    Array.entries()
+  <a href="#loggerenvlogfstring" class="md-nav__link">
+    logger.env.logf(string, ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throwing-an-error" class="md-nav__link">
+    Throwing an error
+  </a>
+  
+    <nav class="md-nav" aria-label="Throwing an error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loggererrstring-numberany" class="md-nav__link">
+    logger.err(string, number|any, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrayfrom" class="md-nav__link">
-    Array.from()
+  <a href="#loggererrfstring-any-numberany" class="md-nav__link">
+    logger.errf(string, any[], number|any, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arraygroupby" class="md-nav__link">
-    Array.groupBy()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraygroupbytomap" class="md-nav__link">
-    Array.groupByToMap()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayisarray" class="md-nav__link">
-    Array.isArray()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraykeys" class="md-nav__link">
-    Array.keys()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayof" class="md-nav__link">
-    Array.of()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraytolocalestring" class="md-nav__link">
-    Array.toLocaleString()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraytosource" class="md-nav__link">
-    Array.toSource()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayvalues" class="md-nav__link">
-    Array.values()
+  <a href="#loggerenverrfstring-numberany" class="md-nav__link">
+    logger.env.errf(string, number|any, ...)
   </a>
   
 </li>
@@ -670,68 +689,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6">
-          Logger
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Logger" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Logger
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logger/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../logger/usage/" class="md-nav__link">
-        Usage
-      </a>
     </li>
   
 
@@ -770,37 +727,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#importing-luaarray" class="md-nav__link">
-    Importing LuaArray
+  <a href="#using-the-formatter" class="md-nav__link">
+    Using the formatter
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logging-the-array" class="md-nav__link">
-    Logging the Array
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one-indexed" class="md-nav__link">
-    One-indexed
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#missing-properties" class="md-nav__link">
-    Missing Properties
-  </a>
-  
-    <nav class="md-nav" aria-label="Missing Properties">
+    <nav class="md-nav" aria-label="Using the formatter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arrayunscopables" class="md-nav__link">
-    Array[@@unscopables]
+  <a href="#loggerformatstring-anyboolean-number" class="md-nav__link">
+    logger.format(string, any[]|boolean, number?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-localized-variables" class="md-nav__link">
+    Non-Localized Variables
   </a>
   
 </li>
@@ -811,93 +754,64 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#missing-methods" class="md-nav__link">
-    Missing Methods
+  <a href="#printing-a-message" class="md-nav__link">
+    Printing a message
   </a>
   
-    <nav class="md-nav" aria-label="Missing Methods">
+    <nav class="md-nav" aria-label="Printing a message">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#arrayiterator" class="md-nav__link">
-    Array[@@iterator]()
+  <a href="#loggerlogstring" class="md-nav__link">
+    logger.log(string, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-arrayspecies" class="md-nav__link">
-    get Array[@@species]
+  <a href="#loggerlogfstring-any" class="md-nav__link">
+    logger.logf(string, any[], ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrayentries" class="md-nav__link">
-    Array.entries()
+  <a href="#loggerenvlogfstring" class="md-nav__link">
+    logger.env.logf(string, ...)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throwing-an-error" class="md-nav__link">
+    Throwing an error
+  </a>
+  
+    <nav class="md-nav" aria-label="Throwing an error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loggererrstring-numberany" class="md-nav__link">
+    logger.err(string, number|any, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arrayfrom" class="md-nav__link">
-    Array.from()
+  <a href="#loggererrfstring-any-numberany" class="md-nav__link">
+    logger.errf(string, any[], number|any, ...)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#arraygroupby" class="md-nav__link">
-    Array.groupBy()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraygroupbytomap" class="md-nav__link">
-    Array.groupByToMap()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayisarray" class="md-nav__link">
-    Array.isArray()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraykeys" class="md-nav__link">
-    Array.keys()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayof" class="md-nav__link">
-    Array.of()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraytolocalestring" class="md-nav__link">
-    Array.toLocaleString()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arraytosource" class="md-nav__link">
-    Array.toSource()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arrayvalues" class="md-nav__link">
-    Array.values()
+  <a href="#loggerenverrfstring-numberany" class="md-nav__link">
+    logger.env.errf(string, number|any, ...)
   </a>
   
 </li>
@@ -922,62 +836,103 @@
 
 
 <h1 id="usage">Usage</h1>
+<p>To get started, you will need to require the Logger package.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Using Arrays with LuaArray is extremely on-par with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">JavaScript classes</a>. Minus some things that are different with arrays with LuaArray, I will not be going over the methods/properties of Arrays. If you would like to read about those: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Please read the official JavaScript references</a>.</p>
+<p class="admonition-title">Usage of <code>GETFENV()</code><p>Using <code>logger.env.</code> <strong>will</strong> use <code>getfenv()</code>! If you're afraid of breaking Luau optimizations, feel free to just use the default logger! This also applies to using <code>logger.format("string", true)</code>.</p>
+</p>
 </div>
-<hr />
-<h2 id="importing-luaarray">Importing LuaArray</h2>
-<p>LuaArray has it's own module when installing it with Wally, however <strong>I do not recommend requiring it from its module</strong>. It loses a lot of sugar clarity if it's not being intertwined with the <code>new</code> method for classes.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">new</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">LuaClass</span><span class="p">)()</span>
-
-<span class="kd">local</span> <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="s2">&quot;Array&quot;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1">-- [5, 12]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="c1">-- 2</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">logger</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Logger</span><span class="p">)</span> <span class="s2">&quot;fileName&quot;</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you're using <a href="../import/">my Import package</a>, you can import it like this:</p>
+<p class="admonition-title">Tip<p>If you're using <a href="../import/">my Import package</a>, you can import it like this:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span>
-<span class="kd">local</span> <span class="n">new</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/luaClass&quot;</span> <span class="p">()</span>
-
-<span class="kd">local</span> <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="s2">&quot;Array&quot;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1">-- [5, 12]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="c1">-- 2</span>
+<span class="kd">local</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;@wally/logger&quot;</span> <span class="s2">&quot;fileName&quot;</span>
 </code></pre></div>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Direct Require</p>
-<p>If you would still like to require it directly, here's what that may look like for you; however this format seems to get repetitive extremely quickly which is why i bundled it with LuaClass:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">LuaArray</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">LuaArray</span><span class="p">)</span>
-
-<span class="kd">local</span> <span class="n">array</span> <span class="o">=</span> <span class="n">LuaArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1">-- [5, 12]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="c1">-- 2</span>
-</code></pre></div>
+</p>
 </div>
 <hr />
-<h2 id="logging-the-array">Logging the Array</h2>
-<p>Unlike JavaScript arrays you cannot simply do <code>print(array)</code> due to some inconvienences of Lua metatables; however, you can get the private table directly from the Array class like the following:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">array</span> <span class="o">=</span> <span class="n">new</span> <span class="s2">&quot;Array&quot;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="c1">-- [5, 12]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">.</span><span class="n">_table</span><span class="p">)</span> <span class="c1">-- {[1]: 5, [2]: 12}</span>
+<h2 id="using-the-formatter">Using the formatter</h2>
+<h3 id="loggerformatstring-anyboolean-number"><code>logger.format(string, any[]|boolean, number?)</code></h3>
+<p>If you're just using the Logger for it's <a href="https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals">Python-like string formatting</a>, you can simply use <code>logger.format()</code></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Luau</label><label for="__tabbed_1_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Hello, {name}!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">name</span> <span class="p">})</span> <span class="c1">--- &quot;Hello, Johnny!&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="non-localized-variables">Non-Localized Variables</h3>
+<div class="admonition warning">
+<p class="admonition-title">Luau Optimizations</p>
+<p>By using <code>logger.format(string, true)</code> it <strong>will</strong> use <code>getfenv()</code> which currently breaks Luau optimizations!</p>
+</div>
+<p>To make formatting almost identical to Python, I added a method which will use <code>getfenv()</code> to find your <strong>non-local</strong> variables.</p>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Hello, {name}!&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">-- &quot;Hello, Johnny!&quot;</span>
+</code></pre></div>
+<p>These variables have to not be defined by <code>local</code> or else the formatter will not be able to find them.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Hello, {name}!&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">-- errors</span>
 </code></pre></div>
 <hr />
-<h2 id="one-indexed">One-indexed</h2>
-<p>Unlike JavaScript, Arrays in Lua are not <a href="https://en.wikipedia.org/wiki/Zero-based_numbering">zero-indexed</a> and start at 1. This is exactly how Roblox handles tables by default, so nothing new from moving from Roblox tables.</p>
+<h2 id="printing-a-message">Printing a message</h2>
+<h3 id="loggerlogstring"><code>logger.log(string, ...)</code></h3>
+<p>This simply prints a message, accepting varadic arguments to print as extra data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Hello from the Logger!&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Hello from varargs!&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi!&quot;</span><span class="p">,</span> <span class="s2">&quot;How are you?&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="loggerlogfstring-any"><code>logger.logf(string, any[], ...)</code></h3>
+<p>This prints a message but uses the built-in formatter. This will match Python formatting. Just like <code>logger.log</code> this will accept varadic arguments to print as extra data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Hello from {name}!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;Alex&quot;</span> <span class="p">})</span> <span class="c1">-- &quot;Hello from Alex!&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Hello from {name} and {me}!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;varargs&quot;</span><span class="p">,</span> <span class="s2">&quot;Alex&quot;</span> <span class="p">},</span> <span class="s2">&quot;other data&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Hello from varargs and Alex!&quot;, &quot;other data&quot;</span>
+</code></pre></div>
+<p>However, I find this formatting pretty ugly and instead just a general replacement of the ugly <code>string.format</code> built-in function.</p>
+<h3 id="loggerenvlogfstring"><code>logger.env.logf(string, ...)</code></h3>
+<div class="admonition warning">
+<p class="admonition-title">Luau Optimizations</p>
+<p>By using <code>logger.env.logf(string, ...)</code> it <strong>will</strong> use <code>getfenv()</code> which currently breaks Luau optimizations!</p>
+</div>
+<p>To make logger almost identical to Python, this will use <code>getfenv()</code> to find the <strong>non-local</strong> variable you referenced. This also accepts varadic arguments like every other <em>log</em> method.</p>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Johnny&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Hello, {name}!&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Hello, Johnny!&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Hello, {name}!&quot;</span><span class="p">,</span> <span class="s2">&quot;other data&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Hello, Johnny!&quot; &quot;other data&quot;</span>
+
+<span class="kd">local</span> <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Workspace&quot;</span> <span class="c1">-- has to be NOT local</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">logf</span><span class="p">(</span><span class="s2">&quot;Go to {location} please!&quot;</span><span class="p">)</span> <span class="c1">-- errors</span>
+</code></pre></div>
 <hr />
-<h2 id="missing-properties">Missing Properties</h2>
-<h3 id="arrayunscopables"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@unscopables">Array[@@unscopables]</a></h3>
-<h2 id="missing-methods">Missing Methods</h2>
-<h3 id="arrayiterator"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator">Array[@@iterator]</a>()</h3>
-<h3 id="get-arrayspecies"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@species">get Array[@@species]</a></h3>
-<h3 id="arrayentries"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries">Array.entries()</a></h3>
-<h3 id="arrayfrom"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from">Array.from()</a></h3>
-<h3 id="arraygroupby"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/groupBy">Array.groupBy()</a></h3>
-<h3 id="arraygroupbytomap"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/groupByToMap">Array.groupByToMap()</a></h3>
-<h3 id="arrayisarray"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray()</a></h3>
-<h3 id="arraykeys"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys">Array.keys()</a></h3>
-<h3 id="arrayof"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of">Array.of()</a></h3>
-<h3 id="arraytolocalestring"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString">Array.toLocaleString()</a></h3>
-<h3 id="arraytosource"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSource">Array.toSource()</a></h3>
-<h3 id="arrayvalues"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values">Array.values()</a></h3>
+<h2 id="throwing-an-error">Throwing an error</h2>
+<h3 id="loggererrstring-numberany"><code>logger.err(string, number|any, ...)</code></h3>
+<p>This simply will throw an error, accepting varadic arguments to print as extra data.</p>
+<p>If the first varadic argument is <code>typeof number</code>, it will be used instead as the error logging level.</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="p">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Oh no!&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Oh no!&quot;</span><span class="p">,</span> <span class="s2">&quot;This occurred&quot;</span><span class="p">)</span> <span class="c1">-- &quot;This occurred&quot; &quot;Oh no!&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Oh no!&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;This occurred&quot;</span><span class="p">)</span> <span class="c1">-- &quot;This occurred&quot; &quot;Oh no!&quot;</span>
+</code></pre></div>
+<h3 id="loggererrfstring-any-numberany"><code>logger.errf(string, any[], number|any, ...)</code></h3>
+<p>This will throw an error but will use the built-in formatter. This will match Python formatting. Just like <code>logger.err</code> this will accept varadic arguments to print as extra data and using the first varadic argument, if it is a number, as the error logging level.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">cause</span> <span class="o">=</span> <span class="s2">&quot;bad B.O.&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">errf</span><span class="p">(</span><span class="s2">&quot;Oh no! {cause} broke the game!&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="n">cause</span> <span class="p">})</span> <span class="c1">-- &quot;Oh no! bad B.O. broke the game!&quot;</span>
+</code></pre></div>
+<h3 id="loggerenverrfstring-numberany"><code>logger.env.errf(string, number|any, ...)</code></h3>
+<div class="admonition warning">
+<p class="admonition-title">Luau Optimizations</p>
+<p>By using <code>logger.env.errf(string, number|any, ...)</code> it <strong>will</strong> use <code>getfenv()</code> which currently breaks Luau optimizations!</p>
+</div>
+<p>To make logger almost identical to Python, this will use <code>getfenv()</code> to find the <strong>non-local</strong> variable you referenced. This also accepts varadic arguments and will use the first one as the error logging level if it as a number, just like every other <em>err</em> method.</p>
+<div class="highlight"><pre><span></span><code><span class="n">cause</span> <span class="o">=</span> <span class="s2">&quot;bad B.O.&quot;</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">errf</span><span class="p">(</span><span class="s2">&quot;Oh no! {cause} broke the game!&quot;</span><span class="p">)</span> <span class="c1">-- &quot;Oh no! bad B.O. broke the game!&quot;</span>
+
+<span class="kd">local</span> <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;He really smelled&quot;</span> <span class="c1">-- has to be NOT local</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">errf</span><span class="p">(</span><span class="s2">&quot;Why did this happen? {description}&quot;</span><span class="p">)</span> <span class="c1">--- errors</span>
+</code></pre></div>
 
               
             </article>
@@ -1005,21 +960,6 @@
           </div>
         </a>
       
-      
-        
-        <a href="../../logger/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Introduction
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
