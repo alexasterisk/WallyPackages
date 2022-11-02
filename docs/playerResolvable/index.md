@@ -1,4 +1,4 @@
-# Logger
+# PlayerResolvable
 
 PlayerResolvable simply allows you to get the username, userId, or Player Instance by any of the previous data.
 
