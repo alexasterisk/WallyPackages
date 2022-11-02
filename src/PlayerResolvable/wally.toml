@@ -1,0 +1,12 @@
+[package]
+name = "alexinite/player-resolvable"
+description = "A simple resolver for getting Players, usernames, user ids from any of the previous."
+version = "0.1.0"
+authors = ["alexasterisk"]
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+exclude = ["README.md", "wally.lock"]
+realm = "shared"
+
+[dependencies]
+Logger = "alexinite/logger@0.1.1"

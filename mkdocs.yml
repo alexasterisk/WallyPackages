@@ -39,3 +39,5 @@ nav:
   - Logger:
     - Introduction: logger/index.md
     - Usage: logger/usage.md
+  - PlayerResolvable:
+    - Introduction: playerResolvable/index.md
