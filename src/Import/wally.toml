@@ -1,9 +1,12 @@
 [package]
 name = "alexinite/import"
 description = "An import module making requires more in-line with TypeScript (+ more)"
-version = "0.1.2"
-authors = ["Alexinite"]
+version = "0.1.4"
+authors = ["alexasterisk"]
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
 exclude = ["README.md", "wally.lock"]
 realm = "shared"
+
+[dependencies]
+Logger = "alexinite/logger@0.1.0"

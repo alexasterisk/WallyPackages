@@ -102,102 +102,11 @@ One thing to tackle with this project was allowing TypeScript's `./` and `../` t
 !!! example
 
         ``` lua linenums="1"
-        local import = require(game.ReplicatedStorage.Packages.Import) [script]
+        local import = require(game.ReplicatedStorage.Packages.Import) (script)
 
         local SomeSubclass = import "./subclass"
         local ClassInSameDir = import "../otherClass"
         ```
 
-!!! warning "Don't forget to set [script]"
-        Forgetting `[script]` when requiring import in times where a dot reference is used will result in an error.
-
------
-
-## Table and Function Back Referencing
-
-Whenever you require a Module you lose the ability to access the ModuleScript as an Instance without reusing the same location. Here is an example ModuleScript:
-
-!!! example
-
-        ``` lua title="shared/Multiply.lua" linenums="1"
-        return function(x: number, y: number)
-            return x * y
-        end
-        ```
-
-        Now, this is a comparison of how you would back reference in Import and Roblox's default Require:
-
-        === "Import"
-
-            ``` lua
-            local multiply = import "shared/multiply" -- first letter can be lowercase for consistency
-            print(multiply(5 * 3)) -- prints 15
-            print(multiply:GetFullName()) -- "game.ReplicatedStorage.Multipy"
-            ```
-
-        === "Require"
-
-            ``` lua
-            local multiplyInstance = ReplicatedStorage.Mulitply
-            local multiply = require(multiplyInstance)
-            print(multiply(5 * 3)) -- prints 15
-            print(multiplyInstance:GetFullName()) -- "game.ReplicatedStorage.Multiply"
-            ```
-
-This is also similar for tables/metatables *kind of*.
-
-!!! example
-
-        ``` lua title="shared/RandomClass.lua" linenums="1"
-        local class = {}
-        class.__index = class
-
-        function class.new(x: number)
-            return setmetatable({
-                number = x
-            }, class)
-        end
-
-        function class:multiplyBy(y: number)
-            return self.number * y
-        end
-
-        return class
-        ```
-
-        ``` lua
-        local RandomClass = import "shared/randomClass"
-        local randomClass = RandomClass.new(5)
-
-        print(randomClass:multiplyBy(3)) -- prints 15
-        print(randomClass.importBackRef:GetFullName()) -- "game.ReplicatedStorage.RandomClass"
-        ```
-
------
-
-## Referencing Instances
-
-Sometimes what you're searching for doesn't *need* to be a script. Like the following:
-
-!!! example
-
-        ``` json title="shared/part.model.json"
-        {
-            "ClassName": "Part",
-            "Children": [{
-                "Name": "Head",
-                "ClassName": "Part"
-            }],
-            "Properties": {
-                "Anchored": true
-            }
-        }
-        ```
-
-        ``` lua
-        local part = import "shared/part"
-        print(part.Head:GetFullName()) -- "game.ReplicatedStorage.part.Head"
-        ```
-
-!!! danger "Severely Impractical"
-        The implications of using Import like this is more impractical than using Import itself: which is impractical. You really needed me to tell you that?
+!!! warning "Don't forget to run `(script)`"
+        Forgetting `(script)` when requiring import in times where a dot reference is used will result in an error.

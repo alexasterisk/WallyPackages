@@ -2,11 +2,11 @@
 
 ## Import
 
-[Documentation](https://alexinite.github.io/WallyPackages/import/)
+[Documentation](https://alexasterisk.github.io/WallyPackages/import/)
 
 ## Installation
 
 ```toml
 [dependencies]
-Import = "alexinite/import@0.1.2"
+Import = "alexinite/import@0.1.4"
 ```

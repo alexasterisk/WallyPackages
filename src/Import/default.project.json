@@ -1,6 +1,6 @@
 {
     "name": "import",
     "tree": {
-        "$path": "lib.lua"
+        "$path": "lib"
     }
 }
