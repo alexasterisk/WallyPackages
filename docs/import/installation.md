@@ -18,7 +18,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Import = "alexinite/import@0.1.5"
+Import = "alexinite/import@0.1.6"
 ```
 
 ``` json title="default.project.json" linenums="1" hl_lines="7 8 9 10 11 12 16 17 18"

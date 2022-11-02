@@ -1,4 +1,4 @@
-local logger = require(script.Parent.Parent.logger) "import"
+local logger = require(script.Parent.Parent.Logger) "import"
 local dirs = require(script.dirs)
 
 local function resolvePath(inst: Instance, path: string, initialPath: string, isFirst: boolean?): {Instance | string | boolean}
