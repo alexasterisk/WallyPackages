@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://example.com/import/usage/">
+        <link rel="canonical" href="https://alexasterisk.github.io/WallyPackages/import/usage/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
@@ -437,20 +437,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#table-and-function-back-referencing" class="md-nav__link">
-    Table and Function Back Referencing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencing-instances" class="md-nav__link">
-    Referencing Instances
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -741,20 +727,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#table-and-function-back-referencing" class="md-nav__link">
-    Table and Function Back Referencing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencing-instances" class="md-nav__link">
-    Referencing Instances
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -876,7 +848,7 @@
 <p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">[</span><span class="n">script</span><span class="p">]</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">import</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Packages</span><span class="p">.</span><span class="n">Import</span><span class="p">)</span> <span class="p">(</span><span class="n">script</span><span class="p">)</span>
 
 <span class="kd">local</span> <span class="n">SomeSubclass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;./subclass&quot;</span>
 <span class="kd">local</span> <span class="n">ClassInSameDir</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;../otherClass&quot;</span>
@@ -884,99 +856,7 @@
 </p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Don't forget to set [script]<p>Forgetting <code>[script]</code> when requiring import in times where a dot reference is used will result in an error.</p>
-</p>
-</div>
-<hr />
-<h2 id="table-and-function-back-referencing">Table and Function Back Referencing</h2>
-<p>Whenever you require a Module you lose the ability to access the ModuleScript as an Instance without reusing the same location. Here is an example ModuleScript:</p>
-<div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">shared/Multiply.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kr">return</span> <span class="kr">function</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
-<span class="kr">end</span>
-</code></pre></div></td></tr></table></div>
-<p>Now, this is a comparison of how you would back reference in Import and Roblox's default Require:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Import</label><label for="__tabbed_1_2">Require</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">multiply</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/multiply&quot;</span> <span class="c1">-- first letter can be lowercase for consistency</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.Multipy&quot;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">multiplyInstance</span> <span class="o">=</span> <span class="n">ReplicatedStorage</span><span class="p">.</span><span class="n">Mulitply</span>
-<span class="kd">local</span> <span class="n">multiply</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="n">multiplyInstance</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiply</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiplyInstance</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.Multiply&quot;</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-</p>
-</div>
-<p>This is also similar for tables/metatables <em>kind of</em>.</p>
-<div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">shared/RandomClass.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">class</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">class</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">class</span>
-
-<span class="kr">function</span> <span class="nc">class</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="nb">setmetatable</span><span class="p">({</span>
-        <span class="n">number</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="p">},</span> <span class="n">class</span><span class="p">)</span>
-<span class="kr">end</span>
-
-<span class="kr">function</span> <span class="nc">class</span><span class="p">:</span><span class="nf">multiplyBy</span><span class="p">(</span><span class="n">y</span><span class="p">:</span> <span class="n">number</span><span class="p">)</span>
-    <span class="kr">return</span> <span class="n">self</span><span class="p">.</span><span class="n">number</span> <span class="o">*</span> <span class="n">y</span>
-<span class="kr">end</span>
-
-<span class="kr">return</span> <span class="n">class</span>
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">RandomClass</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/randomClass&quot;</span>
-<span class="kd">local</span> <span class="n">randomClass</span> <span class="o">=</span> <span class="n">RandomClass</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">randomClass</span><span class="p">:</span><span class="n">multiplyBy</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1">-- prints 15</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">randomClass</span><span class="p">.</span><span class="n">importBackRef</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.RandomClass&quot;</span>
-</code></pre></div>
-</p>
-</div>
-<hr />
-<h2 id="referencing-instances">Referencing Instances</h2>
-<p>Sometimes what you're searching for doesn't <em>need</em> to be a script. Like the following:</p>
-<div class="admonition example">
-<p class="admonition-title">Example<div class="highlight"><span class="filename">shared/part.model.json</span><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;ClassName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Part&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;Children&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Head&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;ClassName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Part&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;Anchored&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span> <span class="n">part</span> <span class="o">=</span> <span class="n">import</span> <span class="s2">&quot;shared/part&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">part</span><span class="p">.</span><span class="n">Head</span><span class="p">:</span><span class="n">GetFullName</span><span class="p">())</span> <span class="c1">-- &quot;game.ReplicatedStorage.part.Head&quot;</span>
-</code></pre></div>
-</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Severely Impractical<p>The implications of using Import like this is more impractical than using Import itself: which is impractical. You really needed me to tell you that?</p>
+<p class="admonition-title">Don't forget to run <code>(script)</code><p>Forgetting <code>(script)</code> when requiring import in times where a dot reference is used will result in an error.</p>
 </p>
 </div>
 
