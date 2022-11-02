@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-Import = "alexinite/import@0.1.4"
+Import = "alexinite/import@0.1.7"
 ```

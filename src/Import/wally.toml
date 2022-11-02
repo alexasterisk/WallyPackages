@@ -9,4 +9,4 @@ exclude = ["README.md", "wally.lock"]
 realm = "shared"
 
 [dependencies]
-Logger = "alexinite/logger@0.1.1"
+Logger = "alexinite/logger@0.1.7"
