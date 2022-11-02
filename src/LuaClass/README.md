@@ -1,5 +1,7 @@
 #
 
+### Not Maintained!
+
 ## LuaClass
 
 [Documentation](https://alexinite.github.io/WallyPackages/classes/)
