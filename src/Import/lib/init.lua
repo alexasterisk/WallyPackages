@@ -1,6 +1,15 @@
 local logger = require(script.Parent.Parent.Logger) "import"
 local dirs = require(script.dirs)
 
+local cache = {}
+
+local function getCached(path: string): any?
+    if cache[path] then
+        return cache[path]
+    end
+    return nil
+end
+
 local function resolvePath(inst: Instance, path: string, initialPath: string, isFirst: boolean?): {Instance | string | boolean}
     local function dotReference()
         if not inst then
@@ -19,11 +28,25 @@ local function resolvePath(inst: Instance, path: string, initialPath: string, is
         dotReference()
         newInst = inst.Parent
     elseif isFirst then
-        newInst = dirs[name]
+        local data = dirs[name]
+        if not data then
+            dirs.modules[2](path)
+            data = dirs.modules[1]:FindFirstChild(name)
+            if not data then
+                data = dirs.modules[1]:FindFirstChild(string.gsub(name, "^%l", string.lower))
+                if not data then
+                    logger.errf('Could not find "{name}" in {parent}', { name, inst:GetFullName() }, initialPath)
+                end
+            end
+        else
+            data[2](path)
+            newInst = data[1]
+        end
+        cache[path] = false
     else
         newInst = inst:FindFirstChild(name)
         if not newInst then
-            logger.err(string.format('Could not find "%s" in %s', name, inst:GetFullName()), initialPath)
+            logger.errf('Could not find "{name}" in {parent}', { name, inst:GetFullName() }, initialPath)
         end
     end
 
@@ -38,19 +61,33 @@ local function init(dir: Instance?, path: string, initialPath: string): any
         logger.err("Immediate error thrown for illegal characters", initialPath)
     end
 
+    local cached = getCached(path)
+    if cached ~= nil then
+        return cached
+    end
+
     local data = resolvePath(dir, path, initialPath, true)
     while not data[3] do
         data = resolvePath(data[1], data[2], initialPath)
         task.wait()
     end
 
+    local toReturn
     if typeof(data[1]) == "Instance" then
         if data[1]:IsA("ModuleScript") then
-            return require(data[1])
+            toReturn = require(data[1])
         else
-            return data[1]
+            toReturn = data[1]
         end
+    elseif data[1] ~= nil then
+        toReturn = data[1]
     end
+
+    if cache[path] == false then
+        cache[path] = toReturn
+    end
+
+    return toReturn
 end
 
 return function(val: Instance | string, val2: string?): (string) -> any | any

@@ -2,6 +2,7 @@ local server = game:GetService("ServerScriptService")
 local shared = game:GetService("ReplicatedStorage")
 local run = game:GetService("RunService")
 
+local modules = shared:FindFirstChild("Modules") or shared:FindFirstChild("modules")
 local wally = shared:FindFirstChild("Packages") or shared:FindFirstChild("packages")
 local wallyDev = shared:FindFirstChild("DevPackages") or shared:FindFirstChild("devPackages")
 local wallyServer
@@ -22,6 +23,15 @@ if IS_SERVER then
 end
 
 local dirs = {
+    ["modules"] = {
+        modules,
+        function (path)
+            if not modules then
+                logger.err('Could not find "ReplicatedStorage.Modules"!', path)
+            end
+        end
+    },
+
     ["@wally"] = {
         wally,
         function (path)
