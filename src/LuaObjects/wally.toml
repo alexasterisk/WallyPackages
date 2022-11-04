@@ -1,9 +1,0 @@
-[package]
-name = "alexinite/arrays-maps-sets"
-description = "Introduces Arrays, Maps, and Sets from TypeScript"
-version = "0.1.3"
-registry = "https://github.com/UpliftGames/wally-index"
-realm = "shared"
-
-[dependencies]
-TableUtil = "alexinite/table-util@0.1.0"

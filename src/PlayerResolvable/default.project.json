@@ -1,6 +1,0 @@
-{
-    "name": "playerResolvable",
-    "tree": {
-        "$path": "lib.lua"
-    }
-}

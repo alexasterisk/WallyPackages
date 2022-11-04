@@ -1,6 +1,0 @@
-{
-    "name": "logger",
-    "tree": {
-        "$path": "lib.lua"
-    }
-}
