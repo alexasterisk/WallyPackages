@@ -1,4 +1,4 @@
-local util = require(script.Parent.Parent.Parent.util)
+local util = require(script.Parent.Parent.util)
 
 --- @class Map
 

@@ -1,7 +1,7 @@
 local Array = require(script.Array)
 local Map = require(script.Map)
 local Set = require(script.Set)
-local util = require(script.Parent.Parent.TableUtil)
+local util = require(script.Parent.TableUtil)
 
 return {
     Array = Array,

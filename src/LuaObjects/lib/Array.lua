@@ -1,5 +1,5 @@
 local Map = require(script.Parent.Map)
-local util = require(script.Parent.Parent.Parent.util)
+local util = require(script.Parent.Parent.util)
 
 --- @class Array
 local Array = {
