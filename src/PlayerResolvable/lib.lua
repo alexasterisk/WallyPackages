@@ -1,5 +1,5 @@
 local Players = game:GetService("Players")
-local logger = require(script.Parent.Parent.Logger) "plr-resolver"
+local logger = require(script.Parent.Logger) "PlayerResolvable"
 
 export type PlayerResolvable = Player | number | string
 
