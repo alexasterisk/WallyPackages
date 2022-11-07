@@ -19,7 +19,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Logger = "alexinite/logger@0.1.1"
+Logger = "alexinite/logger@0.1.2"
 ```
 
 ``` ps1
@@ -55,7 +55,7 @@ First, requiring it depends on your Rojo project format, I will assume you have 
 When requiring the Logger, the first function will provide the name of the file you're initiating the Logger with. This is useful so you know which file is logging what.
 
 ``` lua
-local logger = require(game.ReplicatedStorage.Packages.Logger) "fileName"
+local logger = require(game.ReplicatedStorage.Packages.Logger) "FileName"
 ```
 
 !!! tip
@@ -63,7 +63,7 @@ local logger = require(game.ReplicatedStorage.Packages.Logger) "fileName"
 
         ``` lua
         local import = require(game.ReplicatedStorage.Packages.Import)
-        local logger = import "@wally/logger" "fileName"
+        local logger = import "@wally/logger" "FileName"
         ```
 
 -----
