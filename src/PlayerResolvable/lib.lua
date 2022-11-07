@@ -1,58 +1,132 @@
 local Players = game:GetService("Players")
-local logger = require(script.Parent.Logger) "PlayerResolvable"
 
-export type PlayerResolvable = Player | number | string
+local Promise = require(script.Parent.Promise)
 
-return {
-    getUserId = function(player: PlayerResolvable): number?
-        if type(player) == "string" or tostring(player) then
-            return player
-        elseif typeof(player) == "Instance" and player:IsA("Player") then
-            return player.Name
-        elseif type(player) == "number" or tonumber(player) then
+export type Character = Model & {
+    HumanoidRootPart: BasePart,
+    PrimaryPart: BasePart,
+    Humanoid: Humanoid
+}
+
+export type PlayerResolvable = Player | Character | number | string
+
+
+local funcs = {}
+
+function funcs.verifyUsername(username: string): boolean
+    if type(username) == "string" or tostring(username) then
+        local success, data = pcall(Players.GetUserIdFromNameAsync, Players, tostring(player))
+        return success
+    end
+    return false
+end
+
+function funcs.verifyUserId(userId: number): boolean
+    if type(userId) == "number" or tonumber(userId) then
+        local success, data = pcall(Players.GetNameFromUserIdAsync, Players, tonumber(userId))
+        return success
+    end
+    return false
+end
+
+function funcs.getUserId(player: PlayerResolvable)
+    return Promise.new(function(resolve, reject)
+        if funcs.verifyUserId(player) then
+            return resolve(tonumber(player))
+        elseif type(player) == "string" or tostring(player) then
             local success, data = pcall(Players.GetNameFromUserIdAsync, Players, tonumber(player))
             if not success then
-                return logger.warn("Could not get the username of " .. player, data)
+                return reject("Could not get the userId of " .. player, data)
             end
-            return data
+            return resolve(data)
+        elseif typeof(player) == "Instance" then
+            if player:IsA("Player") then
+                return resolve(player.UserId)
+            elseif player:IsA("Model") and Players:FindFirstChild(player.Name) then
+                return resolve(Players[player.Name].UserId)
+            end
+            return reject(player:GetFullName() .. " is not a Player or a Character and could not be coerced to a userId", player)
         else
-            return logger.warnf("Could not coerce {player} to username", { typeof(player) }, player)
+            return reject("Could not coerce " .. typeof(player) .. " to userId", player)
         end
-    end,
+    end)
+end
 
-    getUsername = function(player: PlayerResolvable): string?
-        if type(player) == "number" or tonumber(player) then
-            return player
-        elseif typeof(player) == "Instance" and player:IsA("Player") then
-            return player.UserId
-        elseif type(player) == "string" or tostring(player) then
+function funcs.getUsername(player: PlayerResolvable)
+    return Promise.new(function(resolve, reject)
+        if funcs.verifyUsername(player) then
+            return resolve(tostring(player))
+        elseif type(player) == "number" or tonumber(player) then
             local success, data = pcall(Players.GetUserIdFromNameAsync, Players, tostring(player))
             if not success then
-                return logger.warn("Could not get the username of " .. player, data)
+                return reject("Could not get the username of " .. player, data)
             end
-            return data
+            return resolve(data)
+        elseif typeof(player) == "Instance" then
+            if player:IsA("Player") then
+                return resolve(player.Name)
+            elseif player:IsA("Model") and Players:FindFirstChild(player.Name) then
+                return resolve(player.Name)
+            end
+            return reject(player:GetFullName() .. " is not a Player or a Character and could not be coerced to a username", player)
         else
-            return logger.warnf("Could not coerece {player} to userId", { typeof(player) }, player)
+            return reject("Could not coerce " .. typeof(player) .. " to username", player)
         end
-    end,
+    end)
+end
 
-    getPlayer = function(player: PlayerResolvable): Player?
-        if typeof(player) == "Instance" and player:IsA("Player") then
-            return player
-        elseif type(player) == "number" or tonumber(player) then
+function funcs.getPlayer(player: PlayerResolvable)
+    return Promise.new(function(resolve, reject)
+        if typeof(player) == "Instance" then
+            if player:IsA("Player") then
+                return resolve(player)
+            elseif player:IsA("Model") and Players:FindFirstChild(player.Name) then
+                return resolve(Players[player.Name])
+            end
+            return reject(player:GetFullName() .. " is not a Player or a Character and could not be coerced to a Player", player)
+        elseif typeof(player) == "number" or tonumber(player) then
             for _, plr: Player in Players:GetPlayers() do
                 if plr.UserId == tonumber(player) then
-                    return plr
+                    return resolve(plr)
                 end
             end
-            return logger.warn("Could not find a Player with the userId of " .. player)
+            return reject("Could not find a Player with the userId of " .. player)
+        elseif type(player) == "string" or tostring(player) then
+            if player.Name == tostring(player) then
+                return resolve(player)
+            end
+            return reject("Could not find a Player named " .. tostring(player))
+        else
+            return reject("Could not coerce " .. typeof(player) .. " to Player", player)
+        end
+    end)
+end
+
+function funcs.getCharacter(player: PlayerResolvable)
+    return Promise.new(function(resolve, reject)
+        if typeof(player) == "Instance" then
+            if player:IsA("Player") then
+                return resolve(player.Character or player:GetPropertyChangedSignal("Character"):Wait())
+            elseif player:IsA("Model") and Players:FindFirstChild(player.Name) then
+                return resolve(player)
+            end
+            return reject(player:GetFullName() .. " is not a Player or a Character and could not be coerced to a Character", player)
+        elseif type(player) == "number" or tonumber(player) then
+            for _, plr in player:GetPlayers() do
+                if plr.UserId == tonumber(player) then
+                    return resolve(plr.Character or plr:GetPropertyChangedSignal("Character"):Wait())
+                end
+            end
+            return reject("Could not find a Character that the given userId belongs to", tonumber(player))
         elseif type(player) == "string" or tostring(player) then
             if Players:FindFirstChild(tostring(player)) then
-                return Players[tostring(player)]
+                return resolve(Players[tostring(player)].Character or Players[tostring(player)]:GetPropertyChangedSignal("Character"):Wait())
             end
-            return logger.warn("Could not find a Player with the username of " .. player)
+            return reject("Could not find a Character that the given username belongs to", tostring(player))
         else
-            return logger.warnf("Could not coerce {player} to Player", { typeof(player) }, player)
+            return reject("Could not coerce " .. typeof(player) .. " to Character")
         end
-    end
-}
+    end)
+end
+
+return funcs
