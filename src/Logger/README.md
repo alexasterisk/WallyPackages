@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-Logger = "alexinite/logger@0.1.1"
+Logger = "alexinite/logger@0.1.2"
 ```

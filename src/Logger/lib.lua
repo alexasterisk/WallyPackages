@@ -13,7 +13,7 @@ return function (name: string)
 				local vars = getfenv(2 + (add or 0))
                 local match = string.match(str, "{.+}")
                 while match do
-                    str = string.gsub(str, match, tostring(vars[string.match(match, "[^{}]+")]))
+                    str = string.gsub(str, match, tostring(vars[string.match(match, "[^{}]+")]), 1)
                     match = string.match(str, "{.+}")
                 end
                 return str
