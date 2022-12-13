@@ -2,11 +2,11 @@
 
 ## Import
 
-[Documentation](https://alexasterisk.github.io/WallyPackages/playerResolvable/)
+[Documentation](https://alexasterisk.github.io/WallyPackages/table-util/)
 
 ## Installation
 
 ```toml
 [dependencies]
-Logger = "alexinite/player-resolvable@0.1.0"
+PlayerResolvable = "alexinite/table-util@0.1.0"
 ```
