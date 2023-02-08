@@ -2,77 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/arrays/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/arrays/usage/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/classes/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/classes/usage/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/installation/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/usage/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/logger/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/logger/usage/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/objects/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/playerResolvable/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/switch-case/</loc>
-         <lastmod>2022-11-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/tableUtil/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <loc>https://alexasterisk.github.io/WallyPackages/table-util/</loc>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/tween/</loc>
-         <lastmod>2022-11-02</lastmod>
+         <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
