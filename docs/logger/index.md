@@ -58,14 +58,6 @@ When requiring the Logger, the first function will provide the name of the file 
 local logger = require(game.ReplicatedStorage.Packages.Logger) "FileName"
 ```
 
-!!! tip
-        If you're using [my Import Package](../import/), you can import it like this:
-
-        ``` lua
-        local import = require(game.ReplicatedStorage.Packages.Import)
-        local logger = import "@wally/logger" "FileName"
-        ```
-
 -----
 
 Trying to keep the Logger relatively similiar to Roblox's built-in, it functions almost identical. There is a key difference however: I introduced [Python-like string formatting](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).

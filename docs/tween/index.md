@@ -56,14 +56,6 @@ First, requiring it depends on your Rojo project format, I will assume you have 
 local tween = require(game.ReplicatedStorage.Packages.Tween)
 ```
 
-!!! tip
-        If you're using [my Import Package](../import/), you can import it like this:
-
-        ``` lua
-        local import = require(game.ReplicatedStorage.Packages.Import)
-        local tween = import "@wally/tween"
-        ```
-
 -----
 
 ### tween()
