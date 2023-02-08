@@ -15,7 +15,7 @@ local funcs = {}
 
 function funcs.verifyUsername(username: string): boolean
     if type(username) == "string" or tostring(username) then
-        local success, data = pcall(Players.GetUserIdFromNameAsync, Players, tostring(player))
+        local success = pcall(Players.GetUserIdFromNameAsync, Players, tostring(username))
         return success
     end
     return false
@@ -23,7 +23,7 @@ end
 
 function funcs.verifyUserId(userId: number): boolean
     if type(userId) == "number" or tonumber(userId) then
-        local success, data = pcall(Players.GetNameFromUserIdAsync, Players, tonumber(userId))
+        local success = pcall(Players.GetNameFromUserIdAsync, Players, tonumber(userId))
         return success
     end
     return false

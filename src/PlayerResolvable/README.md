@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-Logger = "alexinite/player-resolvable@0.2.0"
+PlayerResolvable = "alexinite/player-resolvable@0.2.1"
 ```
