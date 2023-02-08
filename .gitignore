@@ -1,2 +1,3 @@
-site
-src/**/Packages
+site/
+src/**/Packages/
+src/**/aftman.toml
