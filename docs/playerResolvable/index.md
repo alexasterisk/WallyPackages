@@ -19,7 +19,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Logger = "alexinite/playerResolvable@0.2.0"
+Logger = "alexinite/playerResolvable@0.2.1"
 ```
 
 ``` ps1
@@ -55,14 +55,6 @@ First, requiring it depends on your Rojo project format, I will assume you have 
 ``` lua
 local resolver = require(game.ReplicatedStorage.Packages.PlayerResolvable)
 ```
-
-!!! tip
-        If you're using [my Import Package](../import/), you can import it like this:
-
-        ``` lua
-        local import = require(game.ReplicatedStorage.Packages.Import)
-        local resolver = import "@wally/playerResolvable"
-        ```
 
 -----
 
