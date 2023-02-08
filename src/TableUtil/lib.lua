@@ -1,5 +1,5 @@
 --- @alias IterableObject Array | string | Map | Set
-export type table = {[any]: any}
+export type table<A, B> = {[A]: B}
 
 local util = {}
 
@@ -8,7 +8,7 @@ local util = {}
 --- @param original table -- The table to copy
 --- @param copy? table -- The initial table to use as the copy
 --- @return table
-function util.shallowCopy(original: table, copy: table?)
+function util.shallowCopy<A, B>(original: table<A, B>, copy: table<A, B>?): table<A, B>
     copy = copy or {}
     for k, v in original do
         copy[k] = v
@@ -21,7 +21,7 @@ end
 --- @param original table -- The table to copy
 --- @param copy? table -- The initial table to use as the copy
 --- @return table
-function util.deepCopy(original: table, copy: table?)
+function util.deepCopy<A, B>(original: table<A, B>, copy: table<A, B>?): table<A, B>
     copy = copy or {}
     for k, v in original do
         if type(v) == "table" then
@@ -36,7 +36,7 @@ end
 --- Turns a deep table into a parseable string, seperated by commas.
 --- @param t table -- The table to stringify
 --- @return string
-function util.stringify(t: table): string
+function util.stringify<A, B>(t: table<A, B>): string
     local str = ""
     if type(t[1]) == "table" then
         str ..= "{" .. util.stringify(t[1]) .. "}"
@@ -56,7 +56,7 @@ end
 --- Turns a string into an iterable array.
 --- @param str string -- The string to turn into an iterable table.
 --- @return table<number, string>?
-function util.iterateString(str: string): {string}?
+function util.iterateString(str: string): table<number, string>?
     if #str > 0 then
         return string.sub(str, 1, 1):split(string.sub(str, 2))
     end

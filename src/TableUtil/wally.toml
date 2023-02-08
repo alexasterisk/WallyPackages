@@ -1,7 +1,7 @@
 [package]
 name = "alexinite/table-util"
 description = "A simple table util module that provides simple functionality"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["alexasterisk"]
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"

@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-PlayerResolvable = "alexinite/table-util@0.1.0"
+TableUtil = "alexinite/table-util@0.1.1"
 ```
