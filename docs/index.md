@@ -9,6 +9,7 @@
 ### [==`v0.1.8`== import](import/)
 ### [==`v0.1.1`== logger](logger/)
 ### [==`v0.1.0`== tween](tween/)
+### [==`v0.1.0`== props-helper](props-helper/)
 
 -----
 

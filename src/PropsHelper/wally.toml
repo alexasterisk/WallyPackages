@@ -1,0 +1,9 @@
+[package]
+name = "alexinite/props-helper"
+description = "A simple helper for working with default properties"
+version = "0.1.0"
+authors = ["alexasterisk"]
+license = "MIT"
+registry = "https://github.com/UpliftGames/wally-index"
+exclude = ["README.md", "wally.lock"]
+realm = "shared"
