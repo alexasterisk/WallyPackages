@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://alexasterisk.github.io/WallyPackages/props-helper/</loc>
+         <lastmod>2023-02-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://alexasterisk.github.io/WallyPackages/table-util/</loc>
          <lastmod>2023-02-08</lastmod>
          <changefreq>daily</changefreq>
