@@ -19,7 +19,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Logger = "alexinite/arrays-maps-sets@0.1.4"
+Logger = "alexinite/arrays-maps-sets@0.1.5"
 ```
 
 ``` ps1

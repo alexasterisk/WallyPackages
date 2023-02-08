@@ -8,4 +8,4 @@
 
 ```toml
 [dependencies]
-LuaObjects = "alexinite/lua-objects@0.1.4"
+LuaObjects = "alexinite/lua-objects@0.1.5"

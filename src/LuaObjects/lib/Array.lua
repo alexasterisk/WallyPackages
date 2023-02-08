@@ -17,7 +17,7 @@ local Array = {
 --- - If a number is supplied, this will set the max length to this number.
 --- - If a table is supplied, this will "deep copy" the table into this `Array`.
 --- @return Array
-function Array.new(arg: (number | util.table | string)?)
+function Array.new(arg: (number | util.table<any, any> | string)?)
     if type(arg) == "string" then
         arg = util.iterateString(arg)
     end

@@ -16,7 +16,7 @@ local Map = {
 --- - If a table is supplied, this will "deep copy" the table into this `Map`.
 --- - Passing an `Array` with `key-value` pairs is also acceptable.
 --- @return Map
-function Map.new(arg: (util.table)?)
+function Map.new(arg: (util.table<any, any>)?)
     local map = setmetatable({}, Map)
     if type(arg) == "table" then
         if arg["__type"] == "Array" then
