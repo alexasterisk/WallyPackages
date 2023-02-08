@@ -19,7 +19,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Logger = "alexinite/table-util@0.1.0"
+TableUtil = "alexinite/table-util@0.1.1"
 ```
 
 ``` ps1
@@ -55,14 +55,6 @@ First, requiring it depends on your Rojo project format, I will assume you have 
 ``` lua
 local util = require(game.ReplicatedStorage.Packages.TableUtil)
 ```
-
-!!! tip
-        If you're using [my Import Package](../import/), you can import it like this:
-
-        ``` lua
-        local import = require(game.ReplicatedStorage.Packages.Import)
-        local util = import "@wally/tableUtil"
-        ```
 
 -----
 
