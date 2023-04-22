@@ -1,8 +1,0 @@
-[package]
-name = "alexinite/fusion"
-description = "The bleeding-edge Wally package for Fusion"
-version = "0.2.0-beta"
-license = "MIT"
-authors = ["Elttob", "Alexinite"]
-registry = "https://github.com/UpliftGames/wally-index"
-realm = "shared"

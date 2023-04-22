@@ -9,14 +9,6 @@ To get started, you will need to require the Logger package.
 local logger = require(game.ReplicatedStorage.Packages.Logger) "fileName"
 ```
 
-!!! tip
-        If you're using [my Import package](../import/), you can import it like this:
-        
-        ``` lua
-        local import = require(game.ReplicatedStorage.Packages.Import)
-        local logger = import "@wally/logger" "fileName"
-        ```
-
 -----
 
 ## Using the formatter
