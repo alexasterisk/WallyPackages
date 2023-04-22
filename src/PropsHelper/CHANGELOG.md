@@ -1,0 +1,5 @@
+# `alexinite/props-helper` **v0.2.0**
+
+<span style="text-decoration:bold,color:white,background-color:green,border-radius:5px,padding:2px,margin-right:3px">ADD</span><p style="color:green">Added a parameter to PropsHelper.merge to allow merging unknown properties from the new props table to the default props table.</p>
+<span style="text-decoration:bold,color:white,background-color:green,border-radius:5px,padding:2px,margin-right:3px">CHANGE</span><p style="color:green">De-OOPed the module. This also fixed the bug with PropsHelper methods ignoring the "self" parameter on Selene.</p>
+<span style="text-decoration:bold,color:white,background-color:green,border-radius:5px,padding:2px,margin-right:3px">CHANGE</span><p style="color:green">Updated the code to include comments and Moonwave-styled documentation. Documentation is hand-written but providing this will allow Selene to showcase it to people writing code.</p>

@@ -1,3 +1,5 @@
+PropsHelper will help you manage your property tables in a more organized way, and will also help you with strict type checking your props. You can also add middlewares to your PropsHelper to modify the values that are set when you merge your default properties with the given properties.
+
 ## Installation
 
 ### Using Wally
@@ -13,7 +15,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-PropsHelper = "alexinite/props-helper@0.1.0"
+PropsHelper = "alexinite/props-helper@0.2.0"
 ```
 
 ``` ps1
@@ -64,7 +66,7 @@ local helper = propsHelper.define({
 }, true)
 ```
 
-### `:addMiddleware((value: B) -> B)`
+### `.addMiddleware((value) -> value)`
 * ***returns `PropsHelper`***
 
 Adds a middleware to the PropsHelper. Middlewares are functions that are called before a prop is set, and can modify the value that is set. Middlewares are called in the order they are added.
@@ -75,7 +77,7 @@ local helper = propsHelper.define({
     z = 5
 })
 
-helper:addMiddleware(function(value)
+helper.addMiddleware(function(value)
     return value + 1
 end)
 
@@ -83,11 +85,12 @@ end)
 -- helper.z = 6
 ```
 
-### `:merge(table)`
+### `.merge(table, boolean?)`
 * ***returns `table`***
 
 Merges the given props with the default props, and returns the merged table.
 This will also run the middlewares on the merged table.
+If `mergeUnknown` is true, it will merge props that are present in the given table but not in the default props.
 
 ``` lua
 local helper = propsHelper.define({
@@ -95,14 +98,25 @@ local helper = propsHelper.define({
     z = 5
 })
 
-helper:addMiddleware(function(value)
+helper.addMiddleware(function(value)
     return value + 1
 end)
 
-local merged = helper:merge({
-    x = 5
+local merged = helper.merge({
+    x = 7
 })
 
--- merged.x = 6
+-- merged.x = 8
+-- merged.z = 6
+```
+
+``` lua
+local merged = helper.merge({
+    x = 7,
+    y = 1
+}, true)
+
+-- merged.x = 8
+-- merged.y = 2
 -- merged.z = 6
 ```

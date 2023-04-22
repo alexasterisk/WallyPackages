@@ -8,5 +8,5 @@
 
 ```toml
 [dependencies]
-PropsHelper = "alexinite/props-helper@0.1.0"
+PropsHelper = "alexinite/props-helper@0.2.0"
 ```
