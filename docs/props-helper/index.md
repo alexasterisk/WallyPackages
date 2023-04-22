@@ -15,7 +15,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-PropsHelper = "alexinite/props-helper@0.2.0"
+PropsHelper = "alexinite/props-helper@0.2.1"
 ```
 
 ``` ps1
