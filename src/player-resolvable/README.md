@@ -2,7 +2,7 @@
 
 ## Import
 
-[Documentation](https://alexasterisk.github.io/WallyPackages/playerResolvable/)
+[Documentation](https://alexasterisk.github.io/WallyPackages/player-resolvable/)
 
 ## Installation
 

@@ -16,7 +16,6 @@ local module = {}
 --- you can pass in `true` as the second argument.
 --- @param defaultProps table -- The default props for your component.
 --- @param strictTyping? boolean -- Whether or not to use strict typing.
---- @return PropsHelper -- The PropsHelper object.
 function module.define<Default>(defaultProps: Default, strictTyping: boolean?): Methods<Default>
     local isStrict = strictTyping or false -- if not provided, just assume it's false.
     local middleware = {}
@@ -27,7 +26,6 @@ function module.define<Default>(defaultProps: Default, strictTyping: boolean?): 
     --- Allows you to add middleware that will be ran when merging props.
     --- Useful for when you want to do some extra processing on the props.
     --- @param middlewareFn function<any, any> -- The middleware function.
-    --- @return PropsHelper, number -- The PropsHelper object and the index of the middleware function.
     --- @within PropsHelper
     function PropsHelper.addMiddleware(middlewareFn: (value: any) -> any): {Methods<Default> & number}
         table.insert(middleware, middlewareFn) -- Adds a new middleware function to the table. Honestly this can be removed.

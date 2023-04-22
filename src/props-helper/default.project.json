@@ -1,5 +1,5 @@
 {
-    "name": "propsHelper",
+    "name": "props-helper",
     "tree": {
         "$path": "lib.lua"
     }

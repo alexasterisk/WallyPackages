@@ -1,7 +1,7 @@
 [package]
 name = "alexinite/props-helper"
 description = "A simple helper for working with default properties"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["alexasterisk"]
 license = "MIT"
 registry = "https://github.com/UpliftGames/wally-index"
