@@ -31,27 +31,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/objects/</loc>
-         <lastmod>2023-04-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/playerResolvable/</loc>
+         <loc>https://alexasterisk.github.io/WallyPackages/player-resolvable/</loc>
          <lastmod>2023-04-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/props-helper/</loc>
-         <lastmod>2023-04-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/table-util/</loc>
-         <lastmod>2023-04-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://alexasterisk.github.io/WallyPackages/tween/</loc>
          <lastmod>2023-04-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
