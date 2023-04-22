@@ -34,6 +34,8 @@ nav:
     - Usage: logger/usage.md
   - PlayerResolvable:
     - Introduction: playerResolvable/index.md
+  - PropsHelper:
+    - Introduction: props-helper/index.md
   - TableUtil:
     - Introduction: table-util/index.md
   - LuaObjects:
