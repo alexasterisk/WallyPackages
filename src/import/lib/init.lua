@@ -1,4 +1,4 @@
-local logger = require(script.Parent.Parent.Logger) "import"
+local logger = require(script.Parent.Logger) "import"
 local dirs = require(script.dirs)
 
 local cache = {}

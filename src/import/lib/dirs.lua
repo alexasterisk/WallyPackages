@@ -8,7 +8,7 @@ local wallyDev = shared:FindFirstChild("DevPackages") or shared:FindFirstChild("
 local wallyServer
 local client
 
-local logger = require(script.Parent.Parent.Parent.Logger) "import"
+local logger = require(script.Parent.Parent.Logger) "import"
 
 local IS_CLIENT = run:IsClient()
 local IS_SERVER = run:IsServer()

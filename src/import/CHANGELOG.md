@@ -1,3 +1,7 @@
+# `alexinite/import` **v0.1.9**
+
+<span style="text-decoration:bold,color:white,background-color:orange,border-radius:5px,padding:2px,margin-right:3px">BREAKING</span><p style="color:orange">Fixed bug with the `Logger` dependency being incorrectly referenced in `init` and `dirs`. -- #5 opened by @Issue3996</p>
+
 # `alexinite/import` **v0.1.8**
 
 <span style="text-decoration:bold,color:white,background-color:green,border-radius:5px,padding:2px,margin-right:3px">ADD</span><p style="color:green">Added a changelog to keep up-to-date with changes and versioning.</p>
