@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/installation/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/import/usage/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/logger/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/logger/usage/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/player-resolvable/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://alexasterisk.github.io/WallyPackages/props-helper/</loc>
-         <lastmod>2023-04-22</lastmod>
+         <lastmod>2024-03-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
